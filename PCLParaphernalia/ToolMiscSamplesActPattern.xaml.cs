@@ -14,7 +14,7 @@ namespace PCLParaphernalia
     /// © Chris Hutchinson 2015
     /// 
     /// </summary>
-    
+
     [System.Reflection.ObfuscationAttribute(Feature = "renaming",
                                             ApplyToMembers = true)]
 
@@ -37,7 +37,7 @@ namespace PCLParaphernalia
         // Fields (class variables).                                          //
         //                                                                    //
         //--------------------------------------------------------------------//
-        
+
         private ePatternType _indxPatternTypePCL;
         private ePatternType _indxPatternTypePCLXL;
 
@@ -152,22 +152,22 @@ namespace PCLParaphernalia
         {
             Int32 tmpInt = 0;
 
-            ToolMiscSamplesPersist.loadDataTypePattern (
+            ToolMiscSamplesPersist.loadDataTypePattern(
                 "PCL",
                 ref tmpInt,
                 ref _flagPatternFormAsMacroPCL);
 
-            if (tmpInt == (Int32) ePatternType.XHatch)
+            if (tmpInt == (Int32)ePatternType.XHatch)
                 _indxPatternTypePCL = ePatternType.XHatch;
             else
                 _indxPatternTypePCL = ePatternType.Shading;
 
-            ToolMiscSamplesPersist.loadDataTypePattern (
+            ToolMiscSamplesPersist.loadDataTypePattern(
                 "PCLXL",
                 ref tmpInt,
                 ref _flagPatternFormAsMacroPCLXL);
 
-            if (tmpInt == (Int32) ePatternType.XHatch)
+            if (tmpInt == (Int32)ePatternType.XHatch)
                 _indxPatternTypePCLXL = ePatternType.XHatch;
             else
                 _indxPatternTypePCLXL = ePatternType.Shading;
@@ -184,14 +184,14 @@ namespace PCLParaphernalia
 
         public void metricsSaveDataPattern()
         {
-            ToolMiscSamplesPersist.saveDataTypePattern (
+            ToolMiscSamplesPersist.saveDataTypePattern(
                 "PCL",
-                (Int32) _indxPatternTypePCL,
+                (Int32)_indxPatternTypePCL,
                 _flagPatternFormAsMacroPCL);
 
-            ToolMiscSamplesPersist.saveDataTypePattern (
+            ToolMiscSamplesPersist.saveDataTypePattern(
                 "PCLXL",
-                (Int32) _indxPatternTypePCLXL,
+                (Int32)_indxPatternTypePCLXL,
                 _flagPatternFormAsMacroPCLXL);
         }
 
@@ -204,7 +204,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void rbPatternTypeShading_Click (object sender,
+        private void rbPatternTypeShading_Click(object sender,
                                                  RoutedEventArgs e)
         {
             if (_crntPDL == ToolCommonData.ePrintLang.PCL)
@@ -224,7 +224,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void rbPatternTypeXHatch_Click (object sender,
+        private void rbPatternTypeXHatch_Click(object sender,
                                                 RoutedEventArgs e)
         {
             if (_crntPDL == ToolCommonData.ePrintLang.PCL)
@@ -244,7 +244,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void setFlagPatternFormAsMacro (
+        private void setFlagPatternFormAsMacro(
             Boolean setFlag,
             ToolCommonData.ePrintLang crntPDL)
         {

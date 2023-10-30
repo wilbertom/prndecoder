@@ -13,7 +13,7 @@ namespace PCLParaphernalia
     /// © Chris Hutchinson 2014
     /// 
     /// </summary>
-    
+
     [System.Reflection.ObfuscationAttribute(Feature = "renaming",
                                             ApplyToMembers = true)]
 
@@ -71,7 +71,7 @@ namespace PCLParaphernalia
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            metricsSave ();
+            metricsSave();
 
             this.DialogResult = true;
         }
@@ -85,14 +85,14 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void cbPrinters_SelectionChanged (object sender,
+        private void cbPrinters_SelectionChanged(object sender,
                                                   System.EventArgs e)
         {
             if (_initialised)
             {
                 if (cbPrinters.SelectedIndex != -1)
                 {
-                    _printerName = cbPrinters.SelectedItem.ToString ();
+                    _printerName = cbPrinters.SelectedItem.ToString();
                 }
             }
         }
@@ -109,7 +109,7 @@ namespace PCLParaphernalia
         private void initialise()
         {
             Int32 indxPrinter = 0;
-            Int32 ctPrinters  = 0;
+            Int32 ctPrinters = 0;
 
             String printerName;
 
@@ -119,9 +119,9 @@ namespace PCLParaphernalia
             //                                                                //
             //----------------------------------------------------------------//
 
-            TargetCore.metricsLoadWinPrinter (ref _printerName);
+            TargetCore.metricsLoadWinPrinter(ref _printerName);
 
-            cbPrinters.Items.Clear ();
+            cbPrinters.Items.Clear();
 
             ctPrinters = PrinterSettings.InstalledPrinters.Count;
 
@@ -129,7 +129,7 @@ namespace PCLParaphernalia
             {
                 printerName = PrinterSettings.InstalledPrinters[i];
 
-                cbPrinters.Items.Add (printerName);
+                cbPrinters.Items.Add(printerName);
 
                 if (printerName == _printerName)
                     indxPrinter = i;
@@ -141,7 +141,7 @@ namespace PCLParaphernalia
                 indxPrinter = 0;
 
             cbPrinters.SelectedIndex = indxPrinter;
-            _printerName = cbPrinters.Text; 
+            _printerName = cbPrinters.Text;
 
             //----------------------------------------------------------------//
             //                                                                //
@@ -188,7 +188,7 @@ namespace PCLParaphernalia
 
         public void metricsSave()
         {
-            TargetCore.metricsSaveWinPrinter (_printerName);
+            TargetCore.metricsSaveWinPrinter(_printerName);
         }
     }
 }

@@ -324,7 +324,7 @@ namespace PCLParaphernalia
             {
                 if ((_buf[bufOffset] ==
                         PrnParseConstants.prescribeSCRCDelimiter)
-                                      && 
+                                      &&
                     (_buf[bufOffset + 1] == _linkData.PrescribeSCRC)
                                       &&
                     (_buf[bufOffset + 2] ==
@@ -334,10 +334,10 @@ namespace PCLParaphernalia
                     //  String desc = PrescribeCommands.getDescCmdIntro();
                     String desc = "";
 
-                    PrescribeCommands.checkCmdIntro (ref desc,
+                    PrescribeCommands.checkCmdIntro(ref desc,
                                                      _analysisLevel);
 
-                    PrnParseCommon.addDataRow (
+                    PrnParseCommon.addDataRow(
                         PrnParseRowTypes.eType.PrescribeCommand,
                         _table,
                         PrnParseConstants.eOvlShow.Remove,
@@ -349,7 +349,7 @@ namespace PCLParaphernalia
                         desc);
 
                     bufOffset += 3;
-                    bufRem    -= 3;
+                    bufRem -= 3;
 
                     _linkData.PrescribeIntroRead = true;
                 }
@@ -464,12 +464,12 @@ namespace PCLParaphernalia
                     endLoop,
                     foundTerm;
 
-        //  Boolean flagWithinQuote;
+            //  Boolean flagWithinQuote;
             Boolean flagWithinQuoteDouble;
             Boolean flagWithinQuoteSingle;
             Boolean cmdKnown = false;
-            Boolean flagCmdExit  = false;
-            Boolean flagCmdSetCRC  = false;
+            Boolean flagCmdExit = false;
+            Boolean flagCmdSetCRC = false;
 
             String command,
                    commandName,
@@ -490,9 +490,9 @@ namespace PCLParaphernalia
             continuation = false;
             foundTerm = false;
 
-            cmdRem   = bufRem;
+            cmdRem = bufRem;
             cmdStart = offset;
-            cmdLen   = 0;
+            cmdLen = 0;
 
             //----------------------------------------------------------------//
             //                                                                //
@@ -512,7 +512,7 @@ namespace PCLParaphernalia
             //                                                                //
             //----------------------------------------------------------------//
 
-        //  flagWithinQuote = false;
+            //  flagWithinQuote = false;
             flagWithinQuoteDouble = false;
             flagWithinQuoteSingle = false;
 
@@ -531,7 +531,7 @@ namespace PCLParaphernalia
                         if (crntByte == PrnParseConstants.asciiQuote)
                         {
                             flagWithinQuoteDouble = false;
-                        //  flagWithinQuote = false;
+                            //  flagWithinQuote = false;
                             quoteEnd = offset;
                         }
                     }
@@ -540,20 +540,20 @@ namespace PCLParaphernalia
                         if (crntByte == PrnParseConstants.asciiApostrophe)
                         {
                             flagWithinQuoteSingle = false;
-                        //  flagWithinQuote = false;
+                            //  flagWithinQuote = false;
                             quoteEnd = offset;
                         }
                     }
                     else if (crntByte == PrnParseConstants.asciiQuote)
                     {
                         flagWithinQuoteDouble = true;
-                    //  flagWithinQuote = true;
+                        //  flagWithinQuote = true;
                         quoteStart = offset;
                     }
                     else if (crntByte == PrnParseConstants.asciiApostrophe)
                     {
                         flagWithinQuoteSingle = true;
-                    //  flagWithinQuote = true;
+                        //  flagWithinQuote = true;
                         quoteStart = offset;
                     }
                     else if (crntByte == PrnParseConstants.asciiSemiColon)
@@ -687,7 +687,7 @@ namespace PCLParaphernalia
 
                 commandName = cmd.ToString();
 
-                cmdKnown = PrescribeCommands.checkCmd( cmd.ToString(),
+                cmdKnown = PrescribeCommands.checkCmd(cmd.ToString(),
                                                        ref commandDesc,
                                                        ref flagCmdExit,
                                                        ref flagCmdSetCRC,
@@ -773,7 +773,7 @@ namespace PCLParaphernalia
                     {
                         seq = command.Substring(sliceOffset, sliceLen);
 
-                        PrnParseCommon.addDataRow (
+                        PrnParseCommon.addDataRow(
                             PrnParseRowTypes.eType.PrescribeCommand,
                             _table,
                             PrnParseConstants.eOvlShow.Remove,
@@ -789,7 +789,7 @@ namespace PCLParaphernalia
                         seq = "  " + // indent number of spaces
                               command.Substring(sliceOffset, sliceLen);
 
-                        PrnParseCommon.addDataRow (
+                        PrnParseCommon.addDataRow(
                             PrnParseRowTypes.eType.PrescribeCommand,
                             _table,
                             PrnParseConstants.eOvlShow.Remove,
@@ -824,7 +824,7 @@ namespace PCLParaphernalia
                     {
                         seq = command.Substring(sliceOffset, sliceLen);
 
-                        PrnParseCommon.addDataRow (
+                        PrnParseCommon.addDataRow(
                             PrnParseRowTypes.eType.PrescribeCommand,
                             _table,
                             PrnParseConstants.eOvlShow.Remove,
@@ -840,7 +840,7 @@ namespace PCLParaphernalia
                         seq = "  " + // indent number of spaces
                               command.Substring(sliceOffset, sliceLen);
 
-                        PrnParseCommon.addDataRow (
+                        PrnParseCommon.addDataRow(
                             PrnParseRowTypes.eType.PrescribeCommand,
                             _table,
                             PrnParseConstants.eOvlShow.Remove,
@@ -886,14 +886,14 @@ namespace PCLParaphernalia
 
                     _linkData.PrescribeSCRC = cmdParaByte1;
 
-                    PrnParseCommon.addTextRow (
+                    PrnParseCommon.addTextRow(
                         PrnParseRowTypes.eType.MsgComment,
                         _table,
                         PrnParseConstants.eOvlShow.None,
                         "",
                         "Comment",
                         "",
-                        "Set Prescribe CRC = " + (Char) cmdParaByte1);
+                        "Set Prescribe CRC = " + (Char)cmdParaByte1);
                 }
             }
 

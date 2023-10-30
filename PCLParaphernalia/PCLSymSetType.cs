@@ -12,7 +12,7 @@ namespace PCLParaphernalia
     /// </summary>
 
     // [System.Reflection.ObfuscationAttribute(Feature = "properties renaming")]
-    [System.Reflection.ObfuscationAttribute (
+    [System.Reflection.ObfuscationAttribute(
         Feature = "renaming",
         ApplyToMembers = true)]
 
@@ -33,7 +33,7 @@ namespace PCLParaphernalia
         private String _descStd;
         private String _descShort;
 
-        private Byte   _idPCL;
+        private Byte _idPCL;
 
         private Boolean _flagBound;
 
@@ -43,15 +43,15 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        public PCLSymSetType (Byte idPCL,
+        public PCLSymSetType(Byte idPCL,
                                  Boolean flagBound,
                                  String descStd,
                                  String descShort)
         {
-            _idPCL         = idPCL;
-            _flagBound     = flagBound;
-            _descStd       = descStd;
-            _descShort     = descShort;
+            _idPCL = idPCL;
+            _flagBound = flagBound;
+            _descStd = descStd;
+            _descShort = descShort;
         }
 
         //--------------------------------------------------------------------//

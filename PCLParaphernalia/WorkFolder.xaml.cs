@@ -14,7 +14,7 @@ namespace PCLParaphernalia
     /// © Chris Hutchinson 2014
     /// 
     /// </summary>
-    
+
     [System.Reflection.ObfuscationAttribute(Feature = "renaming",
                                             ApplyToMembers = true)]
 
@@ -36,11 +36,11 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        public WorkFolder ()
+        public WorkFolder()
         {
             InitializeComponent();
 
-            initialise ();
+            initialise();
         }
 
         //--------------------------------------------------------------------//
@@ -73,7 +73,7 @@ namespace PCLParaphernalia
 
             String filename = _workFoldername;
 
-            selected = selectDefWorkFolder (ref filename);
+            selected = selectDefWorkFolder(ref filename);
 
             if (selected)
             {
@@ -93,7 +93,7 @@ namespace PCLParaphernalia
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            metricsSave ();
+            metricsSave();
 
             this.DialogResult = true;
         }
@@ -107,7 +107,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void initialise ()
+        private void initialise()
         {
             _workFoldername = _tmpFolder;
 
@@ -150,7 +150,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void metricsSave ()
+        private void metricsSave()
         {
             TargetPersist.saveDataWorkFolder(_workFoldername);
         }
@@ -166,12 +166,12 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private Boolean selectDefWorkFolder (ref String targetFolder)
+        private Boolean selectDefWorkFolder(ref String targetFolder)
         {
             Boolean selected = false;
 
             FolderBrowserDialog folderDialog = new FolderBrowserDialog();
-            
+
             folderDialog.SelectedPath = _tmpFolder;
 
             DialogResult dlgResult = folderDialog.ShowDialog();
@@ -197,7 +197,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void txtFoldername_LostFocus (object sender,
+        private void txtFoldername_LostFocus(object sender,
                                             RoutedEventArgs e)
         {
             _workFoldername = txtFoldername.Text;

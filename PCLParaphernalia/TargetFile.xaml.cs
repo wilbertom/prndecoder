@@ -13,7 +13,7 @@ namespace PCLParaphernalia
     /// © Chris Hutchinson 2010
     /// 
     /// </summary>
-    
+
     [System.Reflection.ObfuscationAttribute(Feature = "renaming",
                                             ApplyToMembers = true)]
 
@@ -26,9 +26,9 @@ namespace PCLParaphernalia
         //--------------------------------------------------------------------//
 
         private String _saveFilename;
-        private ToolCommonData.eToolIds    _crntToolId;
+        private ToolCommonData.eToolIds _crntToolId;
         private ToolCommonData.eToolSubIds _crntSubId;
-        private ToolCommonData.ePrintLang  _crntPDL;
+        private ToolCommonData.ePrintLang _crntPDL;
 
         //--------------------------------------------------------------------//
         //                                              C o n s t r u c t o r //
@@ -36,17 +36,17 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        public TargetFile (ToolCommonData.eToolIds    crntToolId,
+        public TargetFile(ToolCommonData.eToolIds crntToolId,
                            ToolCommonData.eToolSubIds crntSubId,
-                           ToolCommonData.ePrintLang  crntPDL)
+                           ToolCommonData.ePrintLang crntPDL)
         {
             InitializeComponent();
 
             _crntToolId = crntToolId;
-            _crntSubId  = crntSubId;
-            _crntPDL    = crntPDL;
+            _crntSubId = crntSubId;
+            _crntPDL = crntPDL;
 
-            initialise ();
+            initialise();
         }
 
         //--------------------------------------------------------------------//
@@ -74,7 +74,7 @@ namespace PCLParaphernalia
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            metricsSave ();
+            metricsSave();
 
             this.DialogResult = true;
         }
@@ -95,7 +95,7 @@ namespace PCLParaphernalia
 
             String filename = _saveFilename;
 
-            selected = selectTargetFile (ref filename);
+            selected = selectTargetFile(ref filename);
 
             if (selected)
             {
@@ -113,7 +113,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void initialise ()
+        private void initialise()
         {
             btnOK.Visibility = Visibility.Hidden;
 
@@ -126,20 +126,20 @@ namespace PCLParaphernalia
             if (_crntSubId == ToolCommonData.eToolSubIds.None)
             {
                 txtCrntTool.Text =
-                    Enum.GetName (typeof (ToolCommonData.eToolIds),
+                    Enum.GetName(typeof(ToolCommonData.eToolIds),
                                   _crntToolId);
             }
             else
             {
                 txtCrntTool.Text =
-                    Enum.GetName (typeof (ToolCommonData.eToolIds),
+                    Enum.GetName(typeof(ToolCommonData.eToolIds),
                                   _crntToolId) +
                     "|" +
-                    Enum.GetName (typeof (ToolCommonData.eToolSubIds),
+                    Enum.GetName(typeof(ToolCommonData.eToolSubIds),
                                   _crntSubId);
             }
 
-            txtCrntPDL.Text  = _crntPDL.ToString ();
+            txtCrntPDL.Text = _crntPDL.ToString();
 
             //----------------------------------------------------------------//
             //                                                                //
@@ -167,7 +167,7 @@ namespace PCLParaphernalia
                 lbFileNA.Visibility = Visibility.Hidden;
                 btnOK.Visibility = Visibility.Visible;
 
-                TargetCore.metricsReturnFileCapt (_crntToolId,
+                TargetCore.metricsReturnFileCapt(_crntToolId,
                                                   _crntSubId,
                                                   _crntPDL,
                                                   ref _saveFilename);
@@ -217,9 +217,9 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void metricsSave ()
+        private void metricsSave()
         {
-            TargetCore.metricsSaveFileCapt (_crntToolId, _crntSubId, _crntPDL,
+            TargetCore.metricsSaveFileCapt(_crntToolId, _crntSubId, _crntPDL,
                                             _saveFilename);
         }
 
@@ -233,11 +233,11 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private Boolean selectTargetFile (ref String targetFile)
+        private Boolean selectTargetFile(ref String targetFile)
         {
             SaveFileDialog saveDialog = ToolCommonFunctions.createSaveFileDialog(targetFile);
 
-            Nullable<Boolean> dialogResult = saveDialog.ShowDialog ();
+            Nullable<Boolean> dialogResult = saveDialog.ShowDialog();
 
             if (dialogResult == true)
                 targetFile = saveDialog.FileName;
@@ -254,7 +254,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private void txtOpFilename_LostFocus (object sender,
+        private void txtOpFilename_LostFocus(object sender,
                                               RoutedEventArgs e)
         {
             _saveFilename = txtOpFilename.Text;

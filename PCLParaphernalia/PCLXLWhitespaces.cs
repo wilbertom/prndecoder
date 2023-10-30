@@ -6,11 +6,11 @@ using System.Windows.Controls;
 namespace PCLParaphernalia
 {
     /// <summary>
-    /// 
+    ///
     /// Class provides details of PCL XL Whitespace tags.
-    /// 
-    /// © Chris Hutchinson 2010
-    /// 
+    ///
+    /// ï¿½ Chris Hutchinson 2010
+    ///
     /// </summary>
 
     static class PCLXLWhitespaces
@@ -48,7 +48,7 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        public static Boolean checkTag (Byte tagToCheck,
+        public static Boolean checkTag(Byte tagToCheck,
                                         ref String mnemonic,
                                         ref String description)
         {
@@ -56,7 +56,7 @@ namespace PCLParaphernalia
 
             PCLXLWhitespace tag;
 
-            if (_tags.IndexOfKey (tagToCheck) != -1)
+            if (_tags.IndexOfKey(tagToCheck) != -1)
             {
                 seqKnown = true;
                 tag = _tags[tagToCheck];
@@ -64,10 +64,10 @@ namespace PCLParaphernalia
             else
             {
                 seqKnown = false;
-                tag = _tagUnknown; 
+                tag = _tagUnknown;
             }
 
-            mnemonic    = tag.Mnemonic;
+            mnemonic = tag.Mnemonic;
             description = tag.Description;
 
             return seqKnown;
@@ -108,11 +108,11 @@ namespace PCLParaphernalia
             {
                 if (!hddrWritten)
                 {
-                    displayStatsCountsHddr (table);
+                    displayStatsCountsHddr(table);
                     hddrWritten = true;
                 }
 
-                row = table.NewRow ();
+                row = table.NewRow();
 
                 row[0] = _tagUnknown.Tag;
                 row[1] = _tagUnknown.Mnemonic + ": " + _tagUnknown.Description;
@@ -120,7 +120,7 @@ namespace PCLParaphernalia
                 row[3] = _tagUnknown.StatsCtChild;
                 row[4] = _tagUnknown.StatsCtTotal;
 
-                table.Rows.Add (row);
+                table.Rows.Add(row);
             }
 
             //----------------------------------------------------------------//
@@ -141,11 +141,11 @@ namespace PCLParaphernalia
                 {
                     if (!hddrWritten)
                     {
-                        displayStatsCountsHddr (table);
+                        displayStatsCountsHddr(table);
                         hddrWritten = true;
                     }
 
-                    row = table.NewRow ();
+                    row = table.NewRow();
 
                     row[0] = kvp.Value.Tag;
                     row[1] = kvp.Value.Mnemonic + ": " + kvp.Value.Description;
@@ -153,7 +153,7 @@ namespace PCLParaphernalia
                     row[3] = kvp.Value.StatsCtChild;
                     row[4] = kvp.Value.StatsCtTotal;
 
-                    table.Rows.Add (row);
+                    table.Rows.Add(row);
                 }
             }
         }
@@ -173,7 +173,7 @@ namespace PCLParaphernalia
 
             //----------------------------------------------------------------//
 
-            row = table.NewRow ();
+            row = table.NewRow();
 
             row[0] = "";
             row[1] = "_______________________";
@@ -181,9 +181,9 @@ namespace PCLParaphernalia
             row[3] = "";
             row[4] = "";
 
-            table.Rows.Add (row);
+            table.Rows.Add(row);
 
-            row = table.NewRow ();
+            row = table.NewRow();
 
             row[0] = "";
             row[1] = "PCL XL Whitespace tags:";
@@ -191,17 +191,17 @@ namespace PCLParaphernalia
             row[3] = "";
             row[4] = "";
 
-            table.Rows.Add (row);
+            table.Rows.Add(row);
 
-            row = table.NewRow ();
+            row = table.NewRow();
 
             row[0] = "";
-            row[1] = "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
+            row[1] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             row[2] = "";
             row[3] = "";
             row[4] = "";
 
-            table.Rows.Add (row);
+            table.Rows.Add(row);
         }
 
         //--------------------------------------------------------------------//
@@ -219,8 +219,8 @@ namespace PCLParaphernalia
 
             foreach (KeyValuePair<Byte, PCLXLWhitespace> kvp in _tags)
             {
-                    count++;
-                    grid.Items.Add(kvp.Value);
+                count++;
+                grid.Items.Add(kvp.Value);
             }
 
             return count;
@@ -235,17 +235,17 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        public static void incrementStatsCount (Byte tagByte,
+        public static void incrementStatsCount(Byte tagByte,
                                                 Int32 level)
         {
             PCLXLWhitespace tag;
 
-            if (_tags.IndexOfKey (tagByte) != -1)
+            if (_tags.IndexOfKey(tagByte) != -1)
                 tag = _tags[tagByte];
             else
                 tag = _tagUnknown;
 
-            tag.incrementStatisticsCount (level);
+            tag.incrementStatisticsCount(level);
         }
 
         //--------------------------------------------------------------------//
@@ -259,7 +259,7 @@ namespace PCLParaphernalia
 
         public static Boolean isKnownTag(Byte tagToCheck)
         {
-            if (_tags.IndexOfKey (tagToCheck) != -1)
+            if (_tags.IndexOfKey(tagToCheck) != -1)
                 return true;
             else
                 return false;
@@ -342,13 +342,13 @@ namespace PCLParaphernalia
         {
             PCLXLWhitespace tag;
 
-            _tagUnknown.resetStatistics ();
+            _tagUnknown.resetStatistics();
 
             foreach (KeyValuePair<Byte, PCLXLWhitespace> kvp in _tags)
             {
                 tag = kvp.Value;
 
-                tag.resetStatistics ();
+                tag.resetStatistics();
             }
         }
     }
