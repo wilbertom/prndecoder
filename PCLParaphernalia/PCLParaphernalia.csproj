@@ -349,11 +349,6 @@
       <DependentUpon>ToolMakeOverlay.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolMakeOverlayPersist.cs" />
-    <Compile Include="ToolPrintLang.xaml.cs">
-      <DependentUpon>ToolPrintLang.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ToolPrintLangPersist.cs" />
-    <Compile Include="ToolPrintLangReport.cs" />
     <Compile Include="ToolPrnPrint.xaml.cs">
       <DependentUpon>ToolPrnPrint.xaml</DependentUpon>
     </Compile>
@@ -452,10 +447,6 @@
     <Page Include="ToolStatusReadback.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ToolPrintLang.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

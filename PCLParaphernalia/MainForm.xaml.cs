@@ -38,7 +38,6 @@ namespace PCLParaphernalia
         private ToolMiscSamples _subFormToolMiscSamples = null;
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
         private ToolPrintArea _subFormToolPrintArea = null;
-        private ToolPrintLang _subFormToolPrintLang = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
         private ToolPrnPrint _subFormToolPrnPrint = null;
         private ToolSoftFontGenerate _subFormToolSoftFontGenerate = null;
@@ -296,9 +295,6 @@ namespace PCLParaphernalia
                     ToolCommonData.eToolIds.PrintArea)
                     toolPrintArea_Selected(this, null);
                 else if (startToolId ==
-                    ToolCommonData.eToolIds.PrintLang)
-                    toolPrintLang_Selected(this, null);
-                else if (startToolId ==
                     ToolCommonData.eToolIds.PrnAnalyse)
                     toolPrnAnalyse_Selected(this, null);
                 else if (startToolId ==
@@ -353,9 +349,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrintArea)
                 _subFormToolPrintArea.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrintLang)
-                _subFormToolPrintLang.giveCrntPDL(ref _crntPDL);
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.giveCrntPDL(ref _crntPDL);
@@ -434,9 +427,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.PrintArea)
                 _subFormToolPrintArea.resetTarget();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrintLang)
-                _subFormToolPrintLang.resetTarget();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.resetTarget();
             else if (_crntToolId ==
@@ -495,9 +485,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.PrintArea)
                 _subFormToolPrintArea.metricsSave();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrintLang)
-                _subFormToolPrintLang.metricsSave();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.metricsSave();
             else if (_crntToolId ==
@@ -538,7 +525,6 @@ namespace PCLParaphernalia
             menuItemToolMiscSamples.IsChecked = false;
             //  menuItemToolPatternGenerate.IsChecked = false;
             menuItemToolPrintArea.IsChecked = false;
-            menuItemToolPrintLang.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
             menuItemToolPrnPrint.IsChecked = false;
             menuItemToolSoftFontGenerate.IsChecked = false;
@@ -1034,38 +1020,6 @@ namespace PCLParaphernalia
 
             _subFormToolPrintArea.Content = null;
             _subFormToolPrintArea.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l P r i n t L a n g _ S e l e c t e d                        //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Print Languages' item is selected.                //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolPrintLang_Selected(object sender,
-                                            RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolPrintLang.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.PrintLang;
-
-            _subFormToolPrintLang = new ToolPrintLang(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolPrintLang.Content;
-
-            _subFormToolPrintLang.Content = null;
-            _subFormToolPrintLang.Close();
 
             grid1.Children.Clear();
             grid1.Children.Add(content as UIElement);

@@ -183,9 +183,6 @@ namespace PCLParaphernalia
 
             if (crntToolId == ToolCommonData.eToolIds.MakeOverlay)
                 ToolMakeOverlayPersist.loadDataRpt(ref tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.PrintLang)
-                ToolPrintLangPersist.loadDataRpt(ref tmpFmt, ref tmpChkMarks,
-                                                  ref _flagOptRptWrap);
             else if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.loadDataRpt(ref tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.SoftFontGenerate)
@@ -375,9 +372,6 @@ namespace PCLParaphernalia
 
             if (crntToolId == ToolCommonData.eToolIds.MakeOverlay)
                 ToolMakeOverlayPersist.saveDataRpt(tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.PrintLang)
-                ToolPrintLangPersist.saveDataRpt(tmpFmt, tmpChkMarks,
-                                                  flagOptRptWrap);
             else if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.saveDataRpt(tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.SoftFontGenerate)

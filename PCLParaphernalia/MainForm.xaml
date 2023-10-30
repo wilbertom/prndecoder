@@ -113,11 +113,6 @@
                                   Header="Print Area"
                                   IsCheckable="True"
                                   TabIndex="6" />
-                        <MenuItem x:Name="menuItemToolPrintLang"
-                                  Click="toolPrintLang_Selected"
-                                  Header="Print Languages"
-                                  IsCheckable="True"
-                                  TabIndex="7" />
                         <MenuItem x:Name="menuItemToolPrnAnalyse"
                                   Click="toolPrnAnalyse_Selected"
                                   Header="PRN File Analyse"
