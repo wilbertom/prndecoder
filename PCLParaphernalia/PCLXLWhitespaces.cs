@@ -34,6 +34,8 @@ namespace PCLParaphernalia
 
         static PCLXLWhitespaces()
         {
+            _tagUnknown = new PCLXLWhitespace(0x20, "??", "*** Unknown tag ***");
+
             populateTable();
         }
 
@@ -274,57 +276,21 @@ namespace PCLParaphernalia
 
         private static void populateTable()
         {
-            Byte tag;
+            addTag(0x00, "<NUL>", "Null");
+            addTag(0x09, "<HT>", "Horizontal Tab");
+            addTag(0x0a, "<LF>", "Line Feed");
+            addTag(0x0b, "<VT>", "Vertical Tab");
+            addTag(0x0c, "<FF>", "Form Feed");
+            addTag(0x0d, "<CR>", "Carriage Return");
+            addTag(0x20, "<SP>", "Space");
+        }
 
-            tag = 0x20;                                              // ?    //
-            _tagUnknown =
-                new PCLXLWhitespace (tag,
-                                     "??",
-                                     "*** Unknown tag ***");
+        private static PCLXLWhitespace addTag(Byte tag, String mnemonic, String description)
+        {
+            PCLXLWhitespace ws = new PCLXLWhitespace(tag, mnemonic, description);
+            _tags.Add(tag, ws);
 
-            tag = 0x00;                                               // 0x00 //
-            _tags.Add(tag,
-                new PCLXLWhitespace (tag,
-                                     "<NUL>",
-                                     "Null"));
-
-            tag = 0x09;                                               // 0x09 //
-            _tags.Add(tag,
-                new PCLXLWhitespace (tag,
-                                     "<HT>",
-                                     "Horizontal Tab"));
-
-            tag = 0x0a;                                               // 0x0a //
-            _tags.Add(tag,
-                new PCLXLWhitespace (tag,
-                                     "<LF>",
-                                     "Line Feed"));
-
-            tag = 0x0b;                                               // 0x0b //
-            _tags.Add(tag,
-                new PCLXLWhitespace (tag,
-                                     "<VT>",
-                                     "Vertical Tab"));
-
-            tag = 0x0c;                                               // 0x0c //
-            _tags.Add(tag,
-                new PCLXLWhitespace (tag,
-                                     "<FF>",
-                                     "Form Feed"));
-
-            tag = 0x0d;                                               // 0x0d //
-            _tags.Add(tag,
-                new PCLXLWhitespace (tag,
-                                     "<CR>",
-                                     "Carriage Return"));
-
-            tag = 0x20;                                               // 0x20 //
-            _tags.Add(tag,
-                new PCLXLWhitespace (tag,
-                                     "<SP>",
-                                     "Space"));
-
-            _tagCount = _tags.Count;
+            return ws;
         }
 
         //--------------------------------------------------------------------//
