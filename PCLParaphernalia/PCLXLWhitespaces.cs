@@ -26,8 +26,6 @@ namespace PCLParaphernalia
 
         private static PCLXLWhitespace _tagUnknown;
 
-        private static Int32 _tagCount;
-        
         //--------------------------------------------------------------------//
         //                                              C o n s t r u c t o r //
         // P C L X L W h i t e s p a c e s                                    //
