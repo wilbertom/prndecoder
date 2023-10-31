@@ -432,21 +432,5 @@ namespace PCLParaphernalia
                 (Int32)this.Height,
                 (Int32)this.Width);
         }
-
-        /*
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            // set F1 help topic for this form
-            helpProvider1.HelpNamespace = Application.StartupPath + @"\" + sHTMLHelpFileName;
-            helpProvider1.SetHelpNavigator(this, HelpNavigator.Topic);
-            helpProvider1.SetHelpKeyword(this, @"/Garden/garden.htm");
-            helpProvider1.SetHelpNavigator(this.btnStart, HelpNavigator.Topic);
-            helpProvider1.SetHelpKeyword(this.btnStart, @"/Garden/flowers.htm");
-            helpProvider1.SetHelpNavigator(this.btnExit, HelpNavigator.Topic);
-            helpProvider1.SetHelpKeyword(this.btnExit, @"/Garden/tree.htm");
-            helpProvider1.SetHelpNavigator(this.chkMain, HelpNavigator.Topic);
-            helpProvider1.SetHelpKeyword(this.chkMain, @"/HTMLHelp_Examples/jump_to_anchor.htm#AnchorSample");
-        }
-        */
     }
 }
