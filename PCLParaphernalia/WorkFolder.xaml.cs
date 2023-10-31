@@ -134,7 +134,7 @@ namespace PCLParaphernalia
 
         private void metricsSave()
         {
-            TargetPersist.saveDataWorkFolder(_workFoldername);
+
         }
 
         //--------------------------------------------------------------------//

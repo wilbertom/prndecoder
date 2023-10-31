@@ -112,7 +112,6 @@ namespace PCLParaphernalia
 
         public static void loadWorkFoldername()
         {
-            TargetPersist.loadDataWorkFolder(ref _defWorkFolder);
         }
     }
 }

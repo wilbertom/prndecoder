@@ -321,7 +321,6 @@
   <ItemGroup>
     <Compile Include="PCLDownloadFont.cs" />
     <Compile Include="PCLXLDownloadFont.cs" />
-    <Compile Include="TargetPersist.cs" />
     <Compile Include="TEMP_scratchPad.cs" />
     <Compile Include="PCLWriter.cs" />
     <Compile Include="PCLEntityType.cs" />

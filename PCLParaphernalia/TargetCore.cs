@@ -83,21 +83,7 @@ namespace PCLParaphernalia
 
         public static void initialiseSettings()
         {
-            Int32 temp = 0;
-
-            TargetPersist.loadDataCommon(ref temp);
-
-            if (temp < (Int32)eTarget.Max)
-                _targetType = (eTarget)temp;
-            else
-                _targetType = eTarget.NetPrinter;
-
-            TargetPersist.loadDataNetPrinter(ref _netPrinterAddress,
-                                              ref _netPrinterPort,
-                                              ref _netPrinterTimeoutSend,
-                                              ref _netPrinterTimeoutReceive);
-
-            TargetPersist.loadDataWinPrinter(ref _winPrinterName);
+            _targetType = eTarget.File;
         }
 
         //--------------------------------------------------------------------//
@@ -163,41 +149,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // m e t r i c s L o a d N e t P r i n t e r                          //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Load current target network printer metrics data.                  //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static void metricsLoadNetPrinter(ref String printerAddress,
-                                                  ref Int32 printerPort,
-                                                  ref Int32 timeoutSend,
-                                                  ref Int32 timeoutReceive)
-        {
-            printerAddress = _netPrinterAddress;
-            printerPort = _netPrinterPort;
-
-            timeoutSend = _netPrinterTimeoutSend;
-            timeoutReceive = _netPrinterTimeoutReceive;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // m e t r i c s L o a d W i n P r i n t e r                          //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Load current target windows printer metrics data.                  //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static void metricsLoadWinPrinter(ref String printerName)
-        {
-            printerName = _winPrinterName;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // m e t r i c s R e t u r n F i l e C a p t                          //
         //--------------------------------------------------------------------//
         //                                                                    //
@@ -256,8 +207,6 @@ namespace PCLParaphernalia
             _targetType = eTarget.File;
 
             _saveFilename = saveFilename;
-
-            TargetPersist.saveDataCommon((Int32)_targetType);
         }
 
         //--------------------------------------------------------------------//
@@ -296,9 +245,6 @@ namespace PCLParaphernalia
             _targetType = eTarget.WinPrinter;
 
             _winPrinterName = printerName;
-
-            TargetPersist.saveDataWinPrinter((Int32)_targetType,
-                                              _winPrinterName);
         }
 
         //--------------------------------------------------------------------//
@@ -313,8 +259,6 @@ namespace PCLParaphernalia
         public static void metricsSaveType(eTarget type)
         {
             _targetType = type;
-
-            TargetPersist.saveDataCommon((Int32)_targetType);
         }
 
         //--------------------------------------------------------------------//
