@@ -293,9 +293,6 @@
     <Compile Include="ToolCommonData.cs" />
     <Compile Include="ToolCommonFunctions.cs" />
     <Compile Include="ToolCommonPersist.cs" />
-    <Compile Include="ToolPatternGenerate.xaml.cs">
-      <DependentUpon>ToolPatternGenerate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ToolPrnAnalyseReport.cs" />
     <Compile Include="ToolPrnAnalyse.xaml.cs">
       <DependentUpon>ToolPrnAnalyse.xaml</DependentUpon>
@@ -334,10 +331,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TargetWinPrintConfig.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ToolPatternGenerate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

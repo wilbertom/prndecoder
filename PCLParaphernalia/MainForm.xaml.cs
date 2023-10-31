@@ -636,41 +636,6 @@ namespace PCLParaphernalia
             }
         }
 
-        /*
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l P a t t e r n G e n e r a t e _ S e l e c t e d            //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Pattern Generate' item is selected.               //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolPatternGenerate_Selected (
-            object sender,
-            RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolPatternGenerate.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.PatternGenerate;
-
-            _subFormToolPatternGenerate = new ToolPatternGenerate(ref _crntPDL);
-
-            TargetCore.metricsLoadFile(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolPatternGenerate.Content;
-
-            _subFormToolPatternGenerate.Content = null;
-            _subFormToolPatternGenerate.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
-        */
-
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
         // t o o l P r n A n a l y s e _ S e l e c t e d                      //

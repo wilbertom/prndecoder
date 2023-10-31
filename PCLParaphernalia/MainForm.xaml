@@ -78,11 +78,6 @@
                     </MenuItem>
 
                     <MenuItem Header="_Tool" TabIndex="2">
-                  <!--  <MenuItem x:Name="menuItemToolPatternGenerate"
-                                  Click="toolPatternGenerate_Selected"
-                                  Header="Pattern Generate"
-                                  IsCheckable="True"
-                                  TabIndex="5" /> -->
                         <MenuItem x:Name="menuItemToolPrnAnalyse"
                                   Click="toolPrnAnalyse_Selected"
                                   Header="PRN File Analyse"
