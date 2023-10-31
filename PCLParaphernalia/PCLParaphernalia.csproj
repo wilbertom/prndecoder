@@ -316,9 +316,6 @@
     <Compile Include="ToolPrnAnalyseOptDlg.xaml.cs">
       <DependentUpon>ToolPrnAnalyseOptDlg.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToolXXXDiags.xaml.cs">
-      <DependentUpon>ToolXXXDiags.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UnicodeBlock.cs" />
     <Compile Include="UnicodeBlocks.cs" />
     <Compile Include="WorkFolder.xaml.cs">
@@ -376,10 +373,6 @@
     <Page Include="ToolPrnAnalyseOptDlg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ToolXXXDiags.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="WorkFolder.xaml">
       <Generator>MSBuild:Compile</Generator>

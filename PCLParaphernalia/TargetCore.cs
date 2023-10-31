@@ -126,8 +126,6 @@ namespace PCLParaphernalia
                 //     Tool PrintLang
                 //     Tool PrnAnalyse
                 //     Tool SymbolSetGen
-                //     Tool XXXDiags
-
                 _saveFilename = "";
         }
 
@@ -287,7 +285,6 @@ namespace PCLParaphernalia
             //     Tool PrintLang
             //     Tool PrnAnalyse
             //     Tool SymbolSetGen
-            //     Tool XXXDiags
         }
 
         //--------------------------------------------------------------------//

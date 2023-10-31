@@ -23,8 +23,6 @@ namespace PCLParaphernalia
     {
         public const String _regMainKey = "Software\\PCLParaphernalia";
 
-        public Boolean _runXXXDiags = false;  // ****  design time toggle ****//
-
         //--------------------------------------------------------------------//
         //                                                        F i e l d s //
         // Fields (class variables).                                          //
@@ -36,7 +34,6 @@ namespace PCLParaphernalia
         private ToolPrnPrint _subFormToolPrnPrint = null;
         private ToolSymbolSetGenerate _subFormToolSymbolSetGenerate = null;
         private ToolTrayMap _subFormToolTrayMap = null;
-        private ToolXXXDiags _subFormToolXXXDiags = null;
 
         private ToolCommonData.eToolIds _crntToolId =
             ToolCommonData.eToolIds.Min;
@@ -220,19 +217,7 @@ namespace PCLParaphernalia
 
             _crntToolId = ToolCommonData.eToolIds.Min;
 
-            if (_runXXXDiags)
-            {
-                //------------------------------------------------------------//
-                //                                                            //
-                // Load 'XXX Diags' tool.                                     //
-                //                                                            // 
-                // ***** for design time use only *****                       //
-                //                                                            //
-                //------------------------------------------------------------//
-
-                toolXXXDiags_Selected(this, null);
-            }
-            else if (filename != "")
+            if (filename != "")
             {
                 //------------------------------------------------------------//
                 //                                                            //
@@ -305,9 +290,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.TrayMap)
                 _subFormToolTrayMap.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.XXXDiags)
-                _subFormToolXXXDiags.giveCrntPDL(ref _crntPDL);
         }
 
         //--------------------------------------------------------------------//
@@ -352,9 +334,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.TrayMap)
                 _subFormToolTrayMap.resetTarget();
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.XXXDiags)
-                _subFormToolXXXDiags.resetTarget();
         }
 
         //--------------------------------------------------------------------//
@@ -382,9 +361,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.TrayMap)
                 _subFormToolTrayMap.metricsSave();
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.XXXDiags)
-                _subFormToolXXXDiags.metricsSave();
         }
 
         //--------------------------------------------------------------------//
@@ -831,37 +807,6 @@ namespace PCLParaphernalia
 
             _subFormToolTrayMap.Content = null;
             _subFormToolTrayMap.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l X X X D i a g s _ S e l e c t e d                          //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'XXX Diags' item is selected.                      //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolXXXDiags_Selected(object sender, RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolTrayMap.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.XXXDiags;
-
-            _subFormToolXXXDiags = new ToolXXXDiags(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolXXXDiags.Content;
-
-            _subFormToolXXXDiags.Content = null;
-            _subFormToolXXXDiags.Close();
 
             grid1.Children.Clear();
             grid1.Children.Add(content as UIElement);
