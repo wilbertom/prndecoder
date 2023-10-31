@@ -39,7 +39,6 @@ namespace PCLParaphernalia
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
         private ToolPrnPrint _subFormToolPrnPrint = null;
-        private ToolStatusReadback _subFormToolStatusReadback = null;
         private ToolSymbolSetGenerate _subFormToolSymbolSetGenerate = null;
         private ToolTrayMap _subFormToolTrayMap = null;
         private ToolXXXDiags _subFormToolXXXDiags = null;
@@ -296,9 +295,6 @@ namespace PCLParaphernalia
                     ToolCommonData.eToolIds.PrnPrint)
                     toolPrnPrint_Selected(this, null);
                 else if (startToolId ==
-                    ToolCommonData.eToolIds.StatusReadback)
-                    toolStatusReadback_Selected(this, null);
-                else if (startToolId ==
                     ToolCommonData.eToolIds.SymbolSetGenerate)
                     toolSymbolSetGenerate_Selected(this, null);
                 else if (startToolId ==
@@ -344,9 +340,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnPrint)
                 _subFormToolPrnPrint.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.StatusReadback)
-                _subFormToolStatusReadback.giveCrntPDL(ref _crntPDL);
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.giveCrntPDL(ref _crntPDL);
@@ -416,9 +409,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.PrnPrint)
                 _subFormToolPrnPrint.resetTarget();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.StatusReadback)
-                _subFormToolStatusReadback.resetTarget();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.resetTarget();
             else if (_crntToolId ==
@@ -468,9 +458,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.PrnPrint)
                 _subFormToolPrnPrint.metricsSave();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.StatusReadback)
-                _subFormToolStatusReadback.metricsSave();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.metricsSave();
             else if (_crntToolId ==
@@ -500,7 +487,6 @@ namespace PCLParaphernalia
             //  menuItemToolPatternGenerate.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
             menuItemToolPrnPrint.IsChecked = false;
-            menuItemToolStatusReadback.IsChecked = false;
             menuItemToolSymbolSetGenerate.IsChecked = false;
             menuItemToolTrayMap.IsChecked = false;
         }
@@ -1025,38 +1011,6 @@ namespace PCLParaphernalia
 
             _subFormToolPrnPrint.Content = null;
             _subFormToolPrnPrint.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l S t a t u s R e a d b a c k _ S e l e c t e d              //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'StatusReadback' item is selected.                 //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolStatusReadback_Selected(object sender,
-                                                 RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolStatusReadback.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.StatusReadback;
-
-            _subFormToolStatusReadback = new ToolStatusReadback(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolStatusReadback.Content;
-
-            _subFormToolStatusReadback.Content = null;
-            _subFormToolStatusReadback.Close();
 
             grid1.Children.Clear();
             grid1.Children.Add(content as UIElement);

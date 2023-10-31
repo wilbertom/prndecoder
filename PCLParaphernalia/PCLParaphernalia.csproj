@@ -346,8 +346,6 @@
       <DependentUpon>ToolPrnPrint.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolPrnPrintPersist.cs" />
-    <Compile Include="ToolStatusReadbackPJLFS.cs" />
-    <Compile Include="ToolStatusReadbackReport.cs" />
     <Compile Include="ToolSymbolSetGenerate.xaml.cs">
       <DependentUpon>ToolSymbolSetGenerate.xaml</DependentUpon>
     </Compile>
@@ -418,12 +416,6 @@
     <Page Include="MainForm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ToolStatusReadback.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -498,9 +490,6 @@
     <Compile Include="PJLCommands.cs" />
     <Compile Include="PJLVariable.cs" />
     <Compile Include="PJLVariables.cs" />
-    <Compile Include="ToolStatusReadbackPCL.cs" />
-    <Compile Include="ToolStatusReadbackPersist.cs" />
-    <Compile Include="ToolStatusReadbackPJL.cs" />
     <Compile Include="TargetNetPrint.cs" />
     <Compile Include="ToolTrayMapPCL.cs" />
     <Compile Include="ToolTrayMapPCLXL.cs" />
@@ -525,9 +514,6 @@
     </Compile>
     <Compile Include="MainForm.xaml.cs">
       <DependentUpon>MainForm.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ToolStatusReadback.xaml.cs">
-      <DependentUpon>ToolStatusReadback.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolTrayMap.xaml.cs">
       <DependentUpon>ToolTrayMap.xaml</DependentUpon>

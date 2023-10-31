@@ -118,11 +118,6 @@
                                   Header="PRN File Print"
                                   IsCheckable="True"
                                   TabIndex="9" />
-                        <MenuItem x:Name="menuItemToolStatusReadback"
-                                  Click="toolStatusReadback_Selected"
-                                  Header="Status Readback"
-                                  IsCheckable="True"
-                                  TabIndex="11" />
                         <MenuItem x:Name="menuItemToolSymbolSetGenerate"
                                   Click="toolSymbolSetGenerate_Selected"
                                   Header="Symbol Set Generate"

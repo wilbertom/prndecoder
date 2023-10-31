@@ -128,9 +128,6 @@ namespace PCLParaphernalia
             else if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
                 ToolPrnPrintPersist.loadDataCapture(crntPDL,
                                                      ref _saveFilename);
-            else if (crntToolId == ToolCommonData.eToolIds.StatusReadback)
-                ToolStatusReadbackPersist.loadDataCapture(crntPDL,
-                                                           ref _saveFilename);
             else if (crntToolId == ToolCommonData.eToolIds.TrayMap)
                 ToolTrayMapPersist.loadDataCapture(crntPDL,
                                                     ref _saveFilename);
@@ -181,8 +178,6 @@ namespace PCLParaphernalia
                 ToolMakeOverlayPersist.loadDataRpt(ref tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.loadDataRpt(ref tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.StatusReadback)
-                ToolStatusReadbackPersist.loadDataRpt(ref tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.SymbolSetGenerate)
                 ToolSymbolSetGenPersist.loadDataRpt(ref tmpFmt);
             else
@@ -317,9 +312,6 @@ namespace PCLParaphernalia
             else if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
                 ToolPrnPrintPersist.saveDataCapture(crntPDL,
                                                      saveFilename);
-            else if (crntToolId == ToolCommonData.eToolIds.StatusReadback)
-                ToolStatusReadbackPersist.saveDataCapture(crntPDL,
-                                                           saveFilename);
             else if (crntToolId == ToolCommonData.eToolIds.TrayMap)
                 ToolTrayMapPersist.saveDataCapture(crntPDL,
                                                     saveFilename);
@@ -363,8 +355,6 @@ namespace PCLParaphernalia
                 ToolMakeOverlayPersist.saveDataRpt(tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.saveDataRpt(tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.StatusReadback)
-                ToolStatusReadbackPersist.saveDataRpt(tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.SymbolSetGenerate)
                 ToolSymbolSetGenPersist.saveDataRpt(tmpFmt);
         }
