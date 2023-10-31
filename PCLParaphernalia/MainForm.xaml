@@ -108,11 +108,6 @@
                                   Header="Pattern Generate"
                                   IsCheckable="True"
                                   TabIndex="5" /> -->
-                        <MenuItem x:Name="menuItemToolPrintArea"
-                                  Click="toolPrintArea_Selected"
-                                  Header="Print Area"
-                                  IsCheckable="True"
-                                  TabIndex="6" />
                         <MenuItem x:Name="menuItemToolPrnAnalyse"
                                   Click="toolPrnAnalyse_Selected"
                                   Header="PRN File Analyse"

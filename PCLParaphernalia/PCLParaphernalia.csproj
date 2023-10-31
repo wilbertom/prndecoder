@@ -332,10 +332,6 @@
     <Compile Include="ToolPatternGenerate.xaml.cs">
       <DependentUpon>ToolPatternGenerate.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ToolPrintArea.xaml.cs">
-      <DependentUpon>ToolPrintArea.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ToolPrnAnalyseReport.cs" />
     <Compile Include="ToolSoftFontGenerate.xaml.cs">
       <DependentUpon>ToolSoftFontGenerate.xaml</DependentUpon>
@@ -410,10 +406,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ToolPrintArea.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ToolSoftFontGenerate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -487,8 +479,6 @@
     <Compile Include="TargetPersist.cs" />
     <Compile Include="ToolImageBitmapPersist.cs" />
     <Compile Include="ToolFontSamplePersist.cs" />
-    <Compile Include="ToolPrintAreaPCL.cs" />
-    <Compile Include="ToolPrintAreaPCLXL.cs" />
     <Compile Include="TEMP_scratchPad.cs" />
     <Compile Include="ToolImageBitmap.xaml.cs">
       <DependentUpon>ToolImageBitmap.xaml</DependentUpon>
@@ -523,7 +513,6 @@
     <Compile Include="PJLCommands.cs" />
     <Compile Include="PJLVariable.cs" />
     <Compile Include="PJLVariables.cs" />
-    <Compile Include="ToolPrintAreaPersist.cs" />
     <Compile Include="ToolStatusReadbackPCL.cs" />
     <Compile Include="ToolStatusReadbackPersist.cs" />
     <Compile Include="ToolStatusReadbackPJL.cs" />

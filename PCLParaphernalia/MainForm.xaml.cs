@@ -37,7 +37,6 @@ namespace PCLParaphernalia
         private ToolMakeOverlay _subFormToolMakeOverlay = null;
         private ToolMiscSamples _subFormToolMiscSamples = null;
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
-        private ToolPrintArea _subFormToolPrintArea = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
         private ToolPrnPrint _subFormToolPrnPrint = null;
         private ToolSoftFontGenerate _subFormToolSoftFontGenerate = null;
@@ -292,9 +291,6 @@ namespace PCLParaphernalia
                 //          ToolCommonData.eToolIds.PatternGenerate)
                 //          toolPatternGenerate_Selected(this, null);
                 else if (startToolId ==
-                    ToolCommonData.eToolIds.PrintArea)
-                    toolPrintArea_Selected(this, null);
-                else if (startToolId ==
                     ToolCommonData.eToolIds.PrnAnalyse)
                     toolPrnAnalyse_Selected(this, null);
                 else if (startToolId ==
@@ -346,9 +342,6 @@ namespace PCLParaphernalia
             //     else if (_crntToolId ==
             //         ToolCommonData.eToolIds.PatternGenerate)
             //         _subFormToolPatternGenerate.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrintArea)
-                _subFormToolPrintArea.giveCrntPDL(ref _crntPDL);
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.giveCrntPDL(ref _crntPDL);
@@ -424,9 +417,6 @@ namespace PCLParaphernalia
             //          ToolCommonData.eToolIds.PatternGenerate)
             //          _subFormToolPatternGenerate.resetTarget();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrintArea)
-                _subFormToolPrintArea.resetTarget();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.resetTarget();
             else if (_crntToolId ==
@@ -482,9 +472,6 @@ namespace PCLParaphernalia
             //         ToolCommonData.eToolIds.PatternGenerate)
             //         _subFormToolPatternGenerate.metricsSave();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrintArea)
-                _subFormToolPrintArea.metricsSave();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.metricsSave();
             else if (_crntToolId ==
@@ -524,7 +511,6 @@ namespace PCLParaphernalia
             menuItemToolMakeOverlay.IsChecked = false;
             menuItemToolMiscSamples.IsChecked = false;
             //  menuItemToolPatternGenerate.IsChecked = false;
-            menuItemToolPrintArea.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
             menuItemToolPrnPrint.IsChecked = false;
             menuItemToolSoftFontGenerate.IsChecked = false;
@@ -994,36 +980,6 @@ namespace PCLParaphernalia
             grid1.Children.Add(content as UIElement);
         }
         */
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l P r i n t A r e a _ S e l e c t e d                        //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Print Area' item is selected.                     //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolPrintArea_Selected(object sender, RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolPrintArea.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.PrintArea;
-
-            _subFormToolPrintArea = new ToolPrintArea(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolPrintArea.Content;
-
-            _subFormToolPrintArea.Content = null;
-            _subFormToolPrintArea.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //

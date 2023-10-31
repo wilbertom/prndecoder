@@ -125,9 +125,6 @@ namespace PCLParaphernalia
             else if (crntToolId == ToolCommonData.eToolIds.ImageBitmap)
                 ToolImageBitmapPersist.loadDataCapture(crntPDL,
                                                         ref _saveFilename);
-            else if (crntToolId == ToolCommonData.eToolIds.PrintArea)
-                ToolPrintAreaPersist.loadDataCapture(crntPDL,
-                                                      ref _saveFilename);
             else if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
                 ToolPrnPrintPersist.loadDataCapture(crntPDL,
                                                      ref _saveFilename);
@@ -321,9 +318,6 @@ namespace PCLParaphernalia
             else if (crntToolId == ToolCommonData.eToolIds.ImageBitmap)
                 ToolImageBitmapPersist.saveDataCapture(crntPDL,
                                                        saveFilename);
-            else if (crntToolId == ToolCommonData.eToolIds.PrintArea)
-                ToolPrintAreaPersist.saveDataCapture(crntPDL,
-                                                      saveFilename);
             else if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
                 ToolPrnPrintPersist.saveDataCapture(crntPDL,
                                                      saveFilename);
