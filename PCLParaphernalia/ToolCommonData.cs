@@ -100,18 +100,5 @@ namespace PCLParaphernalia
         {
             get { return _defWorkFolder; }
         }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // l o a d W o r k F o l d e r N a m e                                //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Load default work folder name from registry.                       //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static void loadWorkFoldername()
-        {
-        }
     }
 }

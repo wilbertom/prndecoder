@@ -145,26 +145,10 @@ namespace PCLParaphernalia
                 MainFormData.VersionChange = false;
             }
 
-            if (versionMajorOld == -1)
-            {
-                //----------------------------------------------------------------//
-                //                                                                //
-                // First run of post 2.5.0.0 version.                             //
-                // Invoke default working folder dialogue.                        //
-                //                                                                //
-                //----------------------------------------------------------------//
-
-                WorkFolder workFolder = new WorkFolder();
-
-                Nullable<Boolean> dialogResult = workFolder.ShowDialog();
-            }
-
             MainFormPersist.saveVersionData(versionMajorCrnt,
                                              versionMinorCrnt,
                                              versionBuildCrnt,
                                              versionRevisionCrnt);
-
-            ToolCommonData.loadWorkFoldername();
 
             //----------------------------------------------------------------//
             //                                                                //

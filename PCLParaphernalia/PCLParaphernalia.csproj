@@ -291,9 +291,6 @@
     </Compile>
     <Compile Include="UnicodeBlock.cs" />
     <Compile Include="UnicodeBlocks.cs" />
-    <Compile Include="WorkFolder.xaml.cs">
-      <DependentUpon>WorkFolder.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Helper_WPFFocusFix.cs" />
     <Page Include="ToolPrnAnalyse.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -312,10 +309,6 @@
     <Page Include="ToolPrnAnalyseOptDlg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WorkFolder.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
