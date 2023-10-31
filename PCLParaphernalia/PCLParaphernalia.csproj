@@ -283,10 +283,6 @@
     <Compile Include="TargetRptFile.xaml.cs">
       <DependentUpon>TargetRptFile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TargetWinPrint.cs" />
-    <Compile Include="TargetWinPrintConfig.xaml.cs">
-      <DependentUpon>TargetWinPrintConfig.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ToolCommonData.cs" />
     <Compile Include="ToolCommonFunctions.cs" />
     <Compile Include="ToolCommonPersist.cs" />
@@ -310,10 +306,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TargetRptFile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TargetWinPrintConfig.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

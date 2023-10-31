@@ -437,24 +437,6 @@ namespace PCLParaphernalia
 
         public static void requestStreamWrite(Boolean keepNetConnect)
         {
-            if ((_targetType == eTarget.WinPrinter) &&
-                     (_binWriter != null))
-            {
-                //------------------------------------------------------------//
-                //                                                            //
-                // Output to windows printer.                                 //
-                //                                                            //
-                //------------------------------------------------------------//
-
-                BinaryReader binReader =
-                    new BinaryReader(_binWriter.BaseStream);
-
-                TargetWinPrint.sendData(binReader,
-                                         _winPrinterName);
-
-                binReader.Close();
-            }
-
             _binWriter.Close();
             _opStream.Close();
 

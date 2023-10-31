@@ -36,19 +36,6 @@
                                       Header="Configure ..."
                                       TabIndex="1" />
                         </MenuItem>
-                        
-                        <MenuItem x:Name="menuItemTargetWinPrinter"
-                                  Header="Windows Printer"
-                                  TabIndex="2">
-                            <MenuItem x:Name="menuItemTargetWinPrinterSelect"
-                                      Click="targetWinPrinterSelect_Click"
-                                      Header="Select"
-                                      TabIndex="0" />
-                            <MenuItem x:Name="menuItemTargetWinPrinterConfigure"
-                                      Click="targetWinPrinterConfigure_Click"
-                                      Header="Configure ..."
-                                      TabIndex="1" />
-                        </MenuItem>
 
                         <Separator />
 

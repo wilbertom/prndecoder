@@ -183,12 +183,6 @@ namespace PCLParaphernalia
             if (TargetCore.getType() == TargetCore.eTarget.File)
             {
                 menuItemTargetFile.IsChecked = true;
-                menuItemTargetWinPrinter.IsChecked = false;
-            }
-            else if (TargetCore.getType() == TargetCore.eTarget.WinPrinter)
-            {
-                menuItemTargetFile.IsChecked = false;
-                menuItemTargetWinPrinter.IsChecked = true;
             }
 
             //----------------------------------------------------------------//
@@ -432,7 +426,6 @@ namespace PCLParaphernalia
         private void targetFileSelect_Click(object sender, RoutedEventArgs e)
         {
             menuItemTargetFile.IsChecked = true;
-            menuItemTargetWinPrinter.IsChecked = false;
 
             TargetCore.metricsSaveType(TargetCore.eTarget.File);
 
@@ -463,7 +456,6 @@ namespace PCLParaphernalia
             if (dialogResult == true)
             {
                 menuItemTargetFile.IsChecked = true;
-                menuItemTargetWinPrinter.IsChecked = false;
 
                 TargetCore.metricsSaveType(TargetCore.eTarget.File);
 
@@ -493,55 +485,6 @@ namespace PCLParaphernalia
                                                              _crntPDL);
 
             Nullable<Boolean> dialogResult = targetRptFile.ShowDialog();
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t a r g e t W i n P r i n t e r S e l e c t _ C l i c k            //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Target | Windows Printer | Select' item is        //
-        // selected.                                                          //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void targetWinPrinterSelect_Click(object sender,
-                                                   RoutedEventArgs e)
-        {
-            menuItemTargetFile.IsChecked = false;
-            menuItemTargetWinPrinter.IsChecked = true;
-
-            TargetCore.metricsSaveType(TargetCore.eTarget.WinPrinter);
-
-            crntToolResetTarget();
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t a r g e t W i n P r i n t e r C o n f i g u r e _ C l i c k      //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Target | Printer | Configure' item is selected.   //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void targetWinPrinterConfigure_Click(object sender,
-                                                      RoutedEventArgs e)
-        {
-            TargetWinPrintConfig targetWinPrintConfig =
-                new TargetWinPrintConfig();
-
-            Nullable<Boolean> dialogResult = targetWinPrintConfig.ShowDialog();
-
-            if (dialogResult == true)
-            {
-                menuItemTargetFile.IsChecked = false;
-                menuItemTargetWinPrinter.IsChecked = true;
-
-                TargetCore.metricsSaveType(TargetCore.eTarget.WinPrinter);
-
-                crntToolResetTarget();
-            }
         }
 
         //--------------------------------------------------------------------//
