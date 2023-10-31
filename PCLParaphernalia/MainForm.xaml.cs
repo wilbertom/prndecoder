@@ -294,8 +294,6 @@ namespace PCLParaphernalia
 
         private void crntToolUncheckAll()
         {
-            //  menuItemToolPatternGenerate.IsChecked = false;
-            menuItemToolPrnAnalyse.IsChecked = false;
         }
 
         //--------------------------------------------------------------------//
@@ -386,9 +384,6 @@ namespace PCLParaphernalia
                                              RoutedEventArgs e)
         {
             crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolPrnAnalyse.IsChecked = true;
 
             _crntToolId = ToolCommonData.eToolIds.PrnAnalyse;
 

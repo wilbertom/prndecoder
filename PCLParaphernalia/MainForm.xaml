@@ -19,14 +19,6 @@
                       VerticalAlignment="Top"
                       VerticalContentAlignment="Center">
 
-                    <MenuItem Header="_Tool" TabIndex="2">
-                        <MenuItem x:Name="menuItemToolPrnAnalyse"
-                                  Click="toolPrnAnalyse_Selected"
-                                  Header="PRN File Analyse"
-                                  IsCheckable="True"
-                                  TabIndex="8" />
-                    </MenuItem>
-
                     <MenuItem Header="_Help" TabIndex="4">
                         <MenuItem Click="helpAbout_Click"
                                   Header="_About"
