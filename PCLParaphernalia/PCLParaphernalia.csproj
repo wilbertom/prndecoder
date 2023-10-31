@@ -300,35 +300,6 @@
     <Compile Include="ToolFormSamplePCLX.cs" />
     <Compile Include="ToolFormSamplePersist.cs" />
     <Compile Include="ToolMakeOverlayReport.cs" />
-    <Compile Include="ToolMiscSamples.xaml.cs">
-      <DependentUpon>ToolMiscSamples.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ToolMiscSamplesActColour.xaml.cs" />
-    <Compile Include="ToolMiscSamplesActColourGrayPCLXL.cs" />
-    <Compile Include="ToolMiscSamplesActColourImagingPCL.cs" />
-    <Compile Include="ToolMiscSamplesActColourRGBPCLXL.cs" />
-    <Compile Include="ToolMiscSamplesActColourSimplePCL.cs" />
-    <Compile Include="ToolMiscSamplesActLogOper.xaml.cs" />
-    <Compile Include="ToolMiscSamplesActLogOperPCL.cs" />
-    <Compile Include="ToolMiscSamplesActLogOperPCLXL.cs" />
-    <Compile Include="ToolMiscSamplesActPatternXHatchPCL.cs" />
-    <Compile Include="ToolMiscSamplesActPatternXHatchPCLXL.cs" />
-    <Compile Include="ToolMiscSamplesActTxtMod.xaml.cs" />
-    <Compile Include="ToolMiscSamplesActTxtModChrPCL.cs" />
-    <Compile Include="ToolMiscSamplesActTxtModChrPCLXL.cs" />
-    <Compile Include="ToolMiscSamplesActLogPage.xaml.cs" />
-    <Compile Include="ToolMiscSamplesActPattern.xaml.cs" />
-    <Compile Include="ToolMiscSamplesActPatternShadePCL.cs" />
-    <Compile Include="ToolMiscSamplesActPatternShadePCLXL.cs" />
-    <Compile Include="ToolMiscSamplesActLogPagePCL.cs" />
-    <Compile Include="ToolMiscSamplesActTxtModPatPCL.cs" />
-    <Compile Include="ToolMiscSamplesActTxtModPatPCLXL.cs" />
-    <Compile Include="ToolMiscSamplesActTxtModRotPCL.cs" />
-    <Compile Include="ToolMiscSamplesActTxtModRotPCLXL.cs" />
-    <Compile Include="ToolMiscSamplesActUnicode.xaml.cs" />
-    <Compile Include="ToolMiscSamplesPersist.cs" />
-    <Compile Include="ToolMiscSamplesActUnicodePCL.cs" />
-    <Compile Include="ToolMiscSamplesActUnicodePCLXL.cs" />
     <Compile Include="ToolPatternGenerate.xaml.cs">
       <DependentUpon>ToolPatternGenerate.xaml</DependentUpon>
     </Compile>
@@ -382,10 +353,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ToolFormSample.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ToolMiscSamples.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

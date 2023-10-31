@@ -35,7 +35,6 @@ namespace PCLParaphernalia
         private ToolFormSample _subFormToolFormSample = null;
         private ToolImageBitmap _subFormToolImageBitmap = null;
         private ToolMakeOverlay _subFormToolMakeOverlay = null;
-        private ToolMiscSamples _subFormToolMiscSamples = null;
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
         private ToolPrnPrint _subFormToolPrnPrint = null;
@@ -282,9 +281,6 @@ namespace PCLParaphernalia
                 else if (startToolId ==
                     ToolCommonData.eToolIds.MakeOverlay)
                     toolMakeOverlay_Selected(this, null);
-                else if (startToolId ==
-                    ToolCommonData.eToolIds.MiscSamples)
-                    toolMiscSamples_Selected(this, null);
                 //      else if (startToolId ==
                 //          ToolCommonData.eToolIds.PatternGenerate)
                 //          toolPatternGenerate_Selected(this, null);
@@ -328,9 +324,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.MiscSamples)
-                _subFormToolMiscSamples.giveCrntPDL(ref _crntPDL);
             //     else if (_crntToolId ==
             //         ToolCommonData.eToolIds.PatternGenerate)
             //         _subFormToolPatternGenerate.giveCrntPDL(ref _crntPDL);
@@ -367,9 +360,6 @@ namespace PCLParaphernalia
         {
             _crntSubId = ToolCommonData.eToolSubIds.None;
 
-            if (_crntToolId ==
-                ToolCommonData.eToolIds.MiscSamples)
-                _subFormToolMiscSamples.giveCrntType(ref _crntSubId);
         }
 
         //--------------------------------------------------------------------//
@@ -396,9 +386,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.resetTarget();
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.MiscSamples)
-                _subFormToolMiscSamples.resetTarget();
             //      else if (_crntToolId ==
             //          ToolCommonData.eToolIds.PatternGenerate)
             //          _subFormToolPatternGenerate.resetTarget();
@@ -445,9 +432,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.metricsSave();
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.MiscSamples)
-                _subFormToolMiscSamples.metricsSave();
             //     else if (_crntToolId ==
             //         ToolCommonData.eToolIds.PatternGenerate)
             //         _subFormToolPatternGenerate.metricsSave();
@@ -483,7 +467,6 @@ namespace PCLParaphernalia
             menuItemToolFormSample.IsChecked = false;
             menuItemToolImageBitmap.IsChecked = false;
             menuItemToolMakeOverlay.IsChecked = false;
-            menuItemToolMiscSamples.IsChecked = false;
             //  menuItemToolPatternGenerate.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
             menuItemToolPrnPrint.IsChecked = false;
@@ -886,38 +869,6 @@ namespace PCLParaphernalia
             grid1.Children.Add(content as UIElement);
         }
 
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l M i s c S a m p l e s _ S e l e c t e d                    //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Misc Samples' item is selected.                   //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolMiscSamples_Selected(object sender,
-                                              RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolMiscSamples.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.MiscSamples;
-
-            _subFormToolMiscSamples = new ToolMiscSamples(ref _crntPDL,
-                                                          ref _crntSubId);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolMiscSamples.Content;
-
-            _subFormToolMiscSamples.Content = null;
-            _subFormToolMiscSamples.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
         /*
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //

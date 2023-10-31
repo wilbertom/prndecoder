@@ -132,16 +132,6 @@ namespace PCLParaphernalia
                 ToolTrayMapPersist.loadDataCapture(crntPDL,
                                                     ref _saveFilename);
 
-            //----------------------------------------------------------------//
-
-            else if (crntToolId == ToolCommonData.eToolIds.MiscSamples)
-                ToolMiscSamplesPersist.loadDataCapture(
-                             crntToolSubId,
-                             crntPDL,
-                             ref _saveFilename);
-
-            //----------------------------------------------------------------//
-
             else
                 //     Tool MakeOverlay // ***** Do DUMMY procs ? ***** //
                 //     Tool PrintLang
@@ -315,15 +305,6 @@ namespace PCLParaphernalia
             else if (crntToolId == ToolCommonData.eToolIds.TrayMap)
                 ToolTrayMapPersist.saveDataCapture(crntPDL,
                                                     saveFilename);
-
-            //----------------------------------------------------------------//
-
-            else if (crntToolId == ToolCommonData.eToolIds.MiscSamples)
-                ToolMiscSamplesPersist.saveDataCapture(crntToolSubId,
-                                                        crntPDL,
-                                                        saveFilename);
-
-            //----------------------------------------------------------------//
 
             //  else
             //     Tool MakeOverlay // ***** Do DUMMY procs ? ***** //

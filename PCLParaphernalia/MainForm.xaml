@@ -98,11 +98,6 @@
                                   Header="Make Overlay"
                                   IsCheckable="True"
                                   TabIndex="3" />
-                        <MenuItem x:Name="menuItemToolMiscSamples"
-                                  Click="toolMiscSamples_Selected"
-                                  Header="Misc Samples"
-                                  IsCheckable="True"
-                                  TabIndex="4" />
                   <!--  <MenuItem x:Name="menuItemToolPatternGenerate"
                                   Click="toolPatternGenerate_Selected"
                                   Header="Pattern Generate"
