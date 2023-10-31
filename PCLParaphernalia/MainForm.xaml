@@ -88,11 +88,6 @@
                                   Header="Form Sample"
                                   IsCheckable="True"
                                   TabIndex="1" />
-                        <MenuItem x:Name="menuItemToolImageBitmap"
-                                  Click="toolImageBitmap_Selected"
-                                  Header="Image Bitmap"
-                                  IsCheckable="True"
-                                  TabIndex="2" />
                         <MenuItem x:Name="menuItemToolMakeOverlay"
                                   Click="toolMakeOverlay_Selected"
                                   Header="Make Overlay"

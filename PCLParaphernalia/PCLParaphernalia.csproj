@@ -364,12 +364,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ToolImageBitmap.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="ToolMakeOverlay.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -421,15 +415,8 @@
     <Compile Include="PCLDownloadFont.cs" />
     <Compile Include="PCLXLDownloadFont.cs" />
     <Compile Include="TargetPersist.cs" />
-    <Compile Include="ToolImageBitmapPersist.cs" />
     <Compile Include="ToolFontSamplePersist.cs" />
     <Compile Include="TEMP_scratchPad.cs" />
-    <Compile Include="ToolImageBitmap.xaml.cs">
-      <DependentUpon>ToolImageBitmap.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ToolImageBitmapCore.cs" />
-    <Compile Include="ToolImageBitmapPCL.cs" />
-    <Compile Include="ToolImageBitmapPCLXL.cs" />
     <Compile Include="ToolFontSamplePCL.cs" />
     <Compile Include="ToolFontSamplePCLXL.cs" />
     <Compile Include="PCLWriter.cs" />

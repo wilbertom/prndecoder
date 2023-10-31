@@ -33,7 +33,6 @@ namespace PCLParaphernalia
 
         private ToolFontSample _subFormToolFontSample = null;
         private ToolFormSample _subFormToolFormSample = null;
-        private ToolImageBitmap _subFormToolImageBitmap = null;
         private ToolMakeOverlay _subFormToolMakeOverlay = null;
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
@@ -276,9 +275,6 @@ namespace PCLParaphernalia
                     ToolCommonData.eToolIds.FormSample)
                     toolFormSample_Selected(this, null);
                 else if (startToolId ==
-                    ToolCommonData.eToolIds.ImageBitmap)
-                    toolImageBitmap_Selected(this, null);
-                else if (startToolId ==
                     ToolCommonData.eToolIds.MakeOverlay)
                     toolMakeOverlay_Selected(this, null);
                 //      else if (startToolId ==
@@ -318,9 +314,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.FormSample)
                 _subFormToolFormSample.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.ImageBitmap)
-                _subFormToolImageBitmap.giveCrntPDL(ref _crntPDL);
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.giveCrntPDL(ref _crntPDL);
@@ -381,9 +374,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.FormSample)
                 _subFormToolFormSample.resetTarget();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.ImageBitmap)
-                _subFormToolImageBitmap.resetTarget();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.resetTarget();
             //      else if (_crntToolId ==
@@ -427,9 +417,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.FormSample)
                 _subFormToolFormSample.metricsSave();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.ImageBitmap)
-                _subFormToolImageBitmap.metricsSave();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.metricsSave();
             //     else if (_crntToolId ==
@@ -465,7 +452,6 @@ namespace PCLParaphernalia
         {
             menuItemToolFontSample.IsChecked = false;
             menuItemToolFormSample.IsChecked = false;
-            menuItemToolImageBitmap.IsChecked = false;
             menuItemToolMakeOverlay.IsChecked = false;
             //  menuItemToolPatternGenerate.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
@@ -800,38 +786,6 @@ namespace PCLParaphernalia
 
             _subFormToolFormSample.Content = null;
             _subFormToolFormSample.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l I m a g e B i t m a p _ S e l e c t e d                    //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Image Bitmap' item is selected.                   //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolImageBitmap_Selected(object sender,
-                                              RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolImageBitmap.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.ImageBitmap;
-
-            _subFormToolImageBitmap = new ToolImageBitmap(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolImageBitmap.Content;
-
-            _subFormToolImageBitmap.Content = null;
-            _subFormToolImageBitmap.Close();
 
             grid1.Children.Clear();
             grid1.Children.Add(content as UIElement);
