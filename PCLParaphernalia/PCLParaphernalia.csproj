@@ -299,12 +299,6 @@
     </Compile>
     <Compile Include="PrnParseOptions.cs" />
     <Compile Include="ToolPrnAnalysePersist.cs" />
-    <Compile Include="ToolSymbolSetGenerate.xaml.cs">
-      <DependentUpon>ToolSymbolSetGenerate.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ToolSymbolSetGenPCL.cs" />
-    <Compile Include="ToolSymbolSetGenPersist.cs" />
-    <Compile Include="ToolSymbolSetGenReport.cs" />
     <Compile Include="ToolPrnAnalyseOptDlg.xaml.cs">
       <DependentUpon>ToolPrnAnalyseOptDlg.xaml</DependentUpon>
     </Compile>
@@ -337,10 +331,6 @@
     <Page Include="MainForm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ToolSymbolSetGenerate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

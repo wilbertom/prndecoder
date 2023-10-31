@@ -141,8 +141,6 @@ namespace PCLParaphernalia
 
             if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.loadDataRpt(ref tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.SymbolSetGenerate)
-                ToolSymbolSetGenPersist.loadDataRpt(ref tmpFmt);
             else
                 flagNA = true;
 
@@ -282,8 +280,6 @@ namespace PCLParaphernalia
 
             if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.saveDataRpt(tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.SymbolSetGenerate)
-                ToolSymbolSetGenPersist.saveDataRpt(tmpFmt);
         }
 
         //--------------------------------------------------------------------//
