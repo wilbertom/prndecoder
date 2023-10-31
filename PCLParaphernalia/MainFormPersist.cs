@@ -140,8 +140,7 @@ namespace PCLParaphernalia
         public static void saveWindowData(Int32 mwLeft,
                                           Int32 mwTop,
                                           Int32 mwHeight,
-                                          Int32 mwWidth,
-                                          Int32 mwScale)
+                                          Int32 mwWidth)
         {
             RegistryKey keyMain =
                 Registry.CurrentUser.CreateSubKey(_mainKey);
@@ -157,8 +156,6 @@ namespace PCLParaphernalia
                 subKey.SetValue(_nameMainWindowHeight, mwHeight,
                                                     RegistryValueKind.DWord);
                 subKey.SetValue(_nameMainWindowWidth, mwWidth,
-                                                    RegistryValueKind.DWord);
-                subKey.SetValue(_nameMainWindowScale, mwScale,
                                                     RegistryValueKind.DWord);
             }
         }

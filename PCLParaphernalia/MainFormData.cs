@@ -18,8 +18,6 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private static Double _windowScale = 1.0;
-
         private static Boolean _versionChange = false;
 
         private static Int32 _versionMajorOld = -1;
@@ -143,21 +141,6 @@ namespace PCLParaphernalia
             set
             {
                 _versionChange = value;
-            }
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                    P r o p e r t y //
-        // W i n d o w S c a l e                                              //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Double WindowScale
-        {
-            get { return _windowScale; }
-            set
-            {
-                _windowScale = value;
             }
         }
     }

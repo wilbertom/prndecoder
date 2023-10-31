@@ -103,12 +103,6 @@ namespace PCLParaphernalia
                 mwScale = 100;
             }
 
-            windowScale = ((Double)mwScale / 100);
-
-            MainFormData.WindowScale = windowScale;
-
-            zoomSlider.Value = windowScale;
-
             //----------------------------------------------------------------//
             //                                                                //
             // Check for version-specific updates.                            //
@@ -471,24 +465,7 @@ namespace PCLParaphernalia
                 (Int32)this.Left,
                 (Int32)this.Top,
                 (Int32)this.Height,
-                (Int32)this.Width,
-                (Int32)(MainFormData.WindowScale * 100));
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // z o o m S l i d e r _ V a l u e C h a n g e d                      //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'zoomSlider' object is changed.                    //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void zoomSlider_ValueChanged(
-            object sender,
-            RoutedPropertyChangedEventArgs<double> e)
-        {
-            MainFormData.WindowScale = zoomSlider.Value;
+                (Int32)this.Width);
         }
 
         /*

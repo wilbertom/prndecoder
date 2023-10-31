@@ -31,30 +31,6 @@
                                   TabIndex="8" />
                     </MenuItem>
 
-                    <MenuItem Header="_Options" TabIndex="3">
-                        <MenuItem Header="_Zoom">
-                            <Slider x:Name="zoomSlider"
-                                    Width="80"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Center"
-                                    AutoToolTipPlacement="BottomRight"
-                                    AutoToolTipPrecision="2"
-                                    IsMoveToPointEnabled="True"
-                                    IsSnapToTickEnabled="True"
-                                    Maximum="2"
-                                    Minimum="0.4"
-                                    SelectionEnd="0"
-                                    SelectionStart="0"
-                                    SmallChange="0.05"
-                                    TabIndex="0"
-                                    TickFrequency="0.2"
-                                    TickPlacement="Both"
-                                    ToolTip="Determines the UI scale factor."
-                                    ValueChanged="zoomSlider_ValueChanged"
-                                    Value="1" />
-                        </MenuItem>
-                    </MenuItem>
-
                     <MenuItem Header="_Help" TabIndex="4">
                         <MenuItem Click="helpAbout_Click"
                                   Header="_About"

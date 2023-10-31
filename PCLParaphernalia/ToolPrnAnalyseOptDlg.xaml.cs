@@ -1459,30 +1459,12 @@ namespace PCLParaphernalia
 
             //----------------------------------------------------------------//
             //                                                                //
-            // Set the (hidden) slider object to the passed-in scale value.   //
-            // The slider is used as the source binding for a scale           //
-            // transform in the (child) Options dialogue window, so that all  //
-            // windows use the same scaling mechanism as the main window.     //
-            //                                                                //
-            // NOTE: it would be better to bind the transform directly to the //
-            //       scale value (set and stored in the Main window), but (so //
-            //       far) I've failed to find a way to bind directly to a     //
-            //       class object Property value.                             //
-            //                                                                //
-            //----------------------------------------------------------------//
-
-            Double windowScale = MainFormData.WindowScale;
-
-            zoomSlider.Value = windowScale;
-
-            //----------------------------------------------------------------//
-            //                                                                //
             // Setting sizes to the resizeable DockPanel element doesn't work!//
             //                                                                //
             //----------------------------------------------------------------//
 
-            this.Height = 800 * windowScale;
-            this.Width = 450 * windowScale;
+            this.Height = 800;
+            this.Width = 450;
 
             //----------------------------------------------------------------//
             //                                                                //
