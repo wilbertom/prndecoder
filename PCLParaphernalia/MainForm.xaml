@@ -98,11 +98,6 @@
                                   Header="Symbol Set Generate"
                                   IsCheckable="True"
                                   TabIndex="12" />
-                        <MenuItem x:Name="menuItemToolTrayMap"
-                                  Click="toolTrayMap_Selected"
-                                  Header="Tray Map"
-                                  IsCheckable="True"
-                                  TabIndex="13" />
                     </MenuItem>
 
                     <MenuItem Header="_Options" TabIndex="3">

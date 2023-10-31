@@ -118,10 +118,6 @@ namespace PCLParaphernalia
             if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
                 ToolPrnPrintPersist.loadDataCapture(crntPDL,
                                                      ref _saveFilename);
-            else if (crntToolId == ToolCommonData.eToolIds.TrayMap)
-                ToolTrayMapPersist.loadDataCapture(crntPDL,
-                                                    ref _saveFilename);
-
             else
                 //     Tool PrintLang
                 //     Tool PrnAnalyse
@@ -277,9 +273,6 @@ namespace PCLParaphernalia
             if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
                 ToolPrnPrintPersist.saveDataCapture(crntPDL,
                                                      saveFilename);
-            else if (crntToolId == ToolCommonData.eToolIds.TrayMap)
-                ToolTrayMapPersist.saveDataCapture(crntPDL,
-                                                    saveFilename);
 
             //  else
             //     Tool PrintLang

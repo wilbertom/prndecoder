@@ -33,7 +33,6 @@ namespace PCLParaphernalia
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
         private ToolPrnPrint _subFormToolPrnPrint = null;
         private ToolSymbolSetGenerate _subFormToolSymbolSetGenerate = null;
-        private ToolTrayMap _subFormToolTrayMap = null;
 
         private ToolCommonData.eToolIds _crntToolId =
             ToolCommonData.eToolIds.Min;
@@ -259,9 +258,6 @@ namespace PCLParaphernalia
                 else if (startToolId ==
                     ToolCommonData.eToolIds.SymbolSetGenerate)
                     toolSymbolSetGenerate_Selected(this, null);
-                else if (startToolId ==
-                    ToolCommonData.eToolIds.TrayMap)
-                    toolTrayMap_Selected(this, null);
             }
         }
 
@@ -287,9 +283,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.TrayMap)
-                _subFormToolTrayMap.giveCrntPDL(ref _crntPDL);
         }
 
         //--------------------------------------------------------------------//
@@ -331,9 +324,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.resetTarget();
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.TrayMap)
-                _subFormToolTrayMap.resetTarget();
         }
 
         //--------------------------------------------------------------------//
@@ -358,9 +348,6 @@ namespace PCLParaphernalia
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.metricsSave();
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.TrayMap)
-                _subFormToolTrayMap.metricsSave();
         }
 
         //--------------------------------------------------------------------//
@@ -378,7 +365,6 @@ namespace PCLParaphernalia
             menuItemToolPrnAnalyse.IsChecked = false;
             menuItemToolPrnPrint.IsChecked = false;
             menuItemToolSymbolSetGenerate.IsChecked = false;
-            menuItemToolTrayMap.IsChecked = false;
         }
 
         //--------------------------------------------------------------------//
@@ -776,37 +762,6 @@ namespace PCLParaphernalia
 
             _subFormToolSymbolSetGenerate.Content = null;
             _subFormToolSymbolSetGenerate.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l T r a y M a p _ S e l e c t e d                            //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Tray Map' item is selected.                       //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolTrayMap_Selected(object sender, RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolTrayMap.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.TrayMap;
-
-            _subFormToolTrayMap = new ToolTrayMap(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolTrayMap.Content;
-
-            _subFormToolTrayMap.Content = null;
-            _subFormToolTrayMap.Close();
 
             grid1.Children.Clear();
             grid1.Children.Add(content as UIElement);
