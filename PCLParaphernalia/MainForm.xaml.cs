@@ -31,7 +31,6 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private ToolFontSample _subFormToolFontSample = null;
         private ToolMakeOverlay _subFormToolMakeOverlay = null;
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
@@ -268,9 +267,6 @@ namespace PCLParaphernalia
                     startToolId = ToolCommonData.eToolIds.PrintLang;
 
                 if (startToolId ==
-                    ToolCommonData.eToolIds.FontSample)
-                    toolFontSample_Selected(this, null);
-                else if (startToolId ==
                     ToolCommonData.eToolIds.MakeOverlay)
                     toolMakeOverlay_Selected(this, null);
                 //      else if (startToolId ==
@@ -305,9 +301,6 @@ namespace PCLParaphernalia
         private void crntToolResetPDL()
         {
             if (_crntToolId ==
-                ToolCommonData.eToolIds.FontSample)
-                _subFormToolFontSample.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.giveCrntPDL(ref _crntPDL);
             //     else if (_crntToolId ==
@@ -361,9 +354,6 @@ namespace PCLParaphernalia
         private void crntToolResetTarget()
         {
             if (_crntToolId ==
-                ToolCommonData.eToolIds.FontSample)
-                _subFormToolFontSample.resetTarget();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.resetTarget();
             //      else if (_crntToolId ==
@@ -400,9 +390,6 @@ namespace PCLParaphernalia
             if (_crntToolId != ToolCommonData.eToolIds.Min)
                 ToolCommonPersist.saveData((Int32)_crntToolId);
 
-            if (_crntToolId ==
-                ToolCommonData.eToolIds.FontSample)
-                _subFormToolFontSample.metricsSave();
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.metricsSave();
@@ -437,7 +424,6 @@ namespace PCLParaphernalia
 
         private void crntToolUncheckAll()
         {
-            menuItemToolFontSample.IsChecked = false;
             menuItemToolMakeOverlay.IsChecked = false;
             //  menuItemToolPatternGenerate.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
@@ -713,37 +699,6 @@ namespace PCLParaphernalia
 
                 crntToolResetTarget();
             }
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l F o n t S a m p l e _ S e l e c t e d                      //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Font Sample' item is selected.                    //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolFontSample_Selected(object sender, RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolFontSample.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.FontSample;
-
-            _subFormToolFontSample = new ToolFontSample(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolFontSample.Content;
-
-            _subFormToolFontSample.Content = null;
-            _subFormToolFontSample.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
         }
 
         //--------------------------------------------------------------------//

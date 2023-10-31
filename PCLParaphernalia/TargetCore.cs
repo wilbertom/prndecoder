@@ -115,11 +115,7 @@ namespace PCLParaphernalia
             ToolCommonData.ePrintLang crntPDL)
         {
             //----------------------------------------------------------------//
-
-            if (crntToolId == ToolCommonData.eToolIds.FontSample)
-                ToolFontSamplePersist.loadDataCapture(crntPDL,
-                                                       ref _saveFilename);
-            else if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
+            if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
                 ToolPrnPrintPersist.loadDataCapture(crntPDL,
                                                      ref _saveFilename);
             else if (crntToolId == ToolCommonData.eToolIds.TrayMap)
@@ -283,11 +279,7 @@ namespace PCLParaphernalia
             TargetPersist.saveDataCommon((Int32)_targetType);
 
             //----------------------------------------------------------------//
-
-            if (crntToolId == ToolCommonData.eToolIds.FontSample)
-                ToolFontSamplePersist.saveDataCapture(crntPDL,
-                                                       saveFilename);
-            else if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
+            if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
                 ToolPrnPrintPersist.saveDataCapture(crntPDL,
                                                      saveFilename);
             else if (crntToolId == ToolCommonData.eToolIds.TrayMap)

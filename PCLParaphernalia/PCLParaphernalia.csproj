@@ -358,12 +358,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ToolFontSample.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="MainForm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -405,10 +399,7 @@
     <Compile Include="PCLDownloadFont.cs" />
     <Compile Include="PCLXLDownloadFont.cs" />
     <Compile Include="TargetPersist.cs" />
-    <Compile Include="ToolFontSamplePersist.cs" />
     <Compile Include="TEMP_scratchPad.cs" />
-    <Compile Include="ToolFontSamplePCL.cs" />
-    <Compile Include="ToolFontSamplePCLXL.cs" />
     <Compile Include="PCLWriter.cs" />
     <Compile Include="PCLEntityType.cs" />
     <Compile Include="PCLEntityTypes.cs" />
@@ -453,9 +444,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="TargetCore.cs" />
-    <Compile Include="ToolFontSample.xaml.cs">
-      <DependentUpon>ToolFontSample.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.xaml.cs">
       <DependentUpon>MainForm.xaml</DependentUpon>
     </Compile>
