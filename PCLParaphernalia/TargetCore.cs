@@ -114,15 +114,7 @@ namespace PCLParaphernalia
             ToolCommonData.eToolSubIds crntToolSubId,
             ToolCommonData.ePrintLang crntPDL)
         {
-            //----------------------------------------------------------------//
-            if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
-                ToolPrnPrintPersist.loadDataCapture(crntPDL,
-                                                     ref _saveFilename);
-            else
-                //     Tool PrintLang
-                //     Tool PrnAnalyse
-                //     Tool SymbolSetGen
-                _saveFilename = "";
+            _saveFilename = "";
         }
 
         //--------------------------------------------------------------------//
@@ -268,16 +260,6 @@ namespace PCLParaphernalia
             _saveFilename = saveFilename;
 
             TargetPersist.saveDataCommon((Int32)_targetType);
-
-            //----------------------------------------------------------------//
-            if (crntToolId == ToolCommonData.eToolIds.PrnPrint)
-                ToolPrnPrintPersist.saveDataCapture(crntPDL,
-                                                     saveFilename);
-
-            //  else
-            //     Tool PrintLang
-            //     Tool PrnAnalyse
-            //     Tool SymbolSetGen
         }
 
         //--------------------------------------------------------------------//

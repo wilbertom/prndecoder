@@ -83,11 +83,6 @@
                                   Header="PRN File Analyse"
                                   IsCheckable="True"
                                   TabIndex="8" />
-                        <MenuItem x:Name="menuItemToolPrnPrint"
-                                  Click="toolPrnPrint_Selected"
-                                  Header="PRN File Print"
-                                  IsCheckable="True"
-                                  TabIndex="9" />
                         <MenuItem x:Name="menuItemToolSymbolSetGenerate"
                                   Click="toolSymbolSetGenerate_Selected"
                                   Header="Symbol Set Generate"

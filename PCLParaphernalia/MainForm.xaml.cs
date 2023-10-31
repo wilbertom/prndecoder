@@ -31,7 +31,6 @@ namespace PCLParaphernalia
 
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
-        private ToolPrnPrint _subFormToolPrnPrint = null;
         private ToolSymbolSetGenerate _subFormToolSymbolSetGenerate = null;
 
         private ToolCommonData.eToolIds _crntToolId =
@@ -253,9 +252,6 @@ namespace PCLParaphernalia
                     ToolCommonData.eToolIds.PrnAnalyse)
                     toolPrnAnalyse_Selected(this, null);
                 else if (startToolId ==
-                    ToolCommonData.eToolIds.PrnPrint)
-                    toolPrnPrint_Selected(this, null);
-                else if (startToolId ==
                     ToolCommonData.eToolIds.SymbolSetGenerate)
                     toolSymbolSetGenerate_Selected(this, null);
             }
@@ -277,9 +273,6 @@ namespace PCLParaphernalia
             if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrnPrint)
-                _subFormToolPrnPrint.giveCrntPDL(ref _crntPDL);
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.giveCrntPDL(ref _crntPDL);
@@ -319,9 +312,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.resetTarget();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrnPrint)
-                _subFormToolPrnPrint.resetTarget();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.resetTarget();
         }
@@ -343,9 +333,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.metricsSave();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.PrnPrint)
-                _subFormToolPrnPrint.metricsSave();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.SymbolSetGenerate)
                 _subFormToolSymbolSetGenerate.metricsSave();
         }
@@ -363,7 +350,6 @@ namespace PCLParaphernalia
         {
             //  menuItemToolPatternGenerate.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
-            menuItemToolPrnPrint.IsChecked = false;
             menuItemToolSymbolSetGenerate.IsChecked = false;
         }
 
@@ -663,37 +649,6 @@ namespace PCLParaphernalia
 
             _subFormToolPrnAnalyse.Content = null;
             _subFormToolPrnAnalyse.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l P r n P r i n t _ S e l e c t e d                          //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Prn Print' item is selected.                      //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolPrnPrint_Selected(object sender, RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolPrnPrint.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.PrnPrint;
-
-            _subFormToolPrnPrint = new ToolPrnPrint(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolPrnPrint.Content;
-
-            _subFormToolPrnPrint.Content = null;
-            _subFormToolPrnPrint.Close();
 
             grid1.Children.Clear();
             grid1.Children.Add(content as UIElement);
