@@ -83,11 +83,6 @@
                                   Header="Font Sample"
                                   IsCheckable="True"
                                   TabIndex="0" />
-                        <MenuItem x:Name="menuItemToolFormSample"
-                                  Click="toolFormSample_Selected"
-                                  Header="Form Sample"
-                                  IsCheckable="True"
-                                  TabIndex="1" />
                         <MenuItem x:Name="menuItemToolMakeOverlay"
                                   Click="toolMakeOverlay_Selected"
                                   Header="Make Overlay"

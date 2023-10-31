@@ -32,7 +32,6 @@ namespace PCLParaphernalia
         //--------------------------------------------------------------------//
 
         private ToolFontSample _subFormToolFontSample = null;
-        private ToolFormSample _subFormToolFormSample = null;
         private ToolMakeOverlay _subFormToolMakeOverlay = null;
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
@@ -272,9 +271,6 @@ namespace PCLParaphernalia
                     ToolCommonData.eToolIds.FontSample)
                     toolFontSample_Selected(this, null);
                 else if (startToolId ==
-                    ToolCommonData.eToolIds.FormSample)
-                    toolFormSample_Selected(this, null);
-                else if (startToolId ==
                     ToolCommonData.eToolIds.MakeOverlay)
                     toolMakeOverlay_Selected(this, null);
                 //      else if (startToolId ==
@@ -311,9 +307,6 @@ namespace PCLParaphernalia
             if (_crntToolId ==
                 ToolCommonData.eToolIds.FontSample)
                 _subFormToolFontSample.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.FormSample)
-                _subFormToolFormSample.giveCrntPDL(ref _crntPDL);
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.giveCrntPDL(ref _crntPDL);
@@ -371,9 +364,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.FontSample)
                 _subFormToolFontSample.resetTarget();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.FormSample)
-                _subFormToolFormSample.resetTarget();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.resetTarget();
             //      else if (_crntToolId ==
@@ -414,9 +404,6 @@ namespace PCLParaphernalia
                 ToolCommonData.eToolIds.FontSample)
                 _subFormToolFontSample.metricsSave();
             else if (_crntToolId ==
-                ToolCommonData.eToolIds.FormSample)
-                _subFormToolFormSample.metricsSave();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.MakeOverlay)
                 _subFormToolMakeOverlay.metricsSave();
             //     else if (_crntToolId ==
@@ -451,7 +438,6 @@ namespace PCLParaphernalia
         private void crntToolUncheckAll()
         {
             menuItemToolFontSample.IsChecked = false;
-            menuItemToolFormSample.IsChecked = false;
             menuItemToolMakeOverlay.IsChecked = false;
             //  menuItemToolPatternGenerate.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
@@ -755,37 +741,6 @@ namespace PCLParaphernalia
 
             _subFormToolFontSample.Content = null;
             _subFormToolFontSample.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l F o r m S a m p l e _ S e l e c t e d                      //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Form Sample' item is selected.                    //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolFormSample_Selected(object sender, RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolFormSample.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.FormSample;
-
-            _subFormToolFormSample = new ToolFormSample(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolFormSample.Content;
-
-            _subFormToolFormSample.Content = null;
-            _subFormToolFormSample.Close();
 
             grid1.Children.Clear();
             grid1.Children.Add(content as UIElement);
