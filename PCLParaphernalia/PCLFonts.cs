@@ -264,46 +264,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // d i s p l a y F o n t L i s t                                      //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Display list of commands in nominated data grid.                   //
-        //                                                                    //
-        // Used (only) by the Print Languages tool, so included are fonts of  //
-        // types:                                                             //
-        //                                                                    //
-        //  PresetTypeface      - most fonts are of this type.                //
-        //                                                                    //
-        //  PresetFamilyMember  - fonts for which there is more than one with //
-        //                        the same PCL typeface identifier.           //
-        //                        e.g. Helvetica & Univers                    //
-        //                             have Narrow & Condensed versions       //
-        //                             (respectively) as well as Regular.     //
-        //                        e.g. Line Printer                           //
-        //                             has several versions bound to          //
-        //                             different symbol sets.                 //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displayFontList(DataGrid grid)
-        {
-            Int32 count = 0;
-
-            foreach (PCLFont v in _fonts)
-            {
-                if ((v.Type == eFontType.PresetTypeface) ||
-                    (v.Type == eFontType.PresetFamilyMember))
-                {
-                    count++;
-                    grid.Items.Add(v);
-                }
-            }
-
-            return count;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // g e t C o u n t                                                    //
         //--------------------------------------------------------------------//
         //                                                                    //

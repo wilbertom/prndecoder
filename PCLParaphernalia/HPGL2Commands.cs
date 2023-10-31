@@ -97,28 +97,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // d i s p l a y S e q L i s t                                        //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Display list of commands in nominated data grid.                   //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displaySeqList(DataGrid grid)
-        {
-            Int32 count = 0;
-
-            foreach (KeyValuePair<String, HPGL2Command> kvp in _cmds)
-            {
-                count++;
-                grid.Items.Add(kvp.Value);
-            }
-
-            return count;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // d i s p l a y S t a t s C o u n t s                                //
         //--------------------------------------------------------------------//
         //                                                                    //

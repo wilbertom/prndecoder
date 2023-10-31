@@ -75,38 +75,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // d i s p l a y S e q L i s t                                        //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Display list of commands in nominated data grid.                   //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displaySeqList(DataGrid grid)
-        {
-            Int32 count = 0;
-
-            foreach (PCLSymbolSet v in _sets)
-            {
-                if ((v.Group == eSymSetGroup.Preset) ||
-                    (v.Group == eSymSetGroup.Unicode) ||
-                    (v.Group == eSymSetGroup.Unbound))
-                {
-                    count++;
-                    grid.Items.Add(v);
-                }
-                else if (v.Group == eSymSetGroup.NonStd)
-                {
-                    count++;
-                    grid.Items.Add(v);
-                }
-            }
-
-            return count;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // g e t C o u n t                                                    //
         //--------------------------------------------------------------------//
         //                                                                    //

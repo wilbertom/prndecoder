@@ -167,62 +167,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // d i s p l a y S e q L i s t                                        //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Add list of sequences to nominated data grid.                      //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displaySeqList(DataGrid grid,
-                                           Boolean incObsoleteSeqs,
-                                           Boolean incDiscreteVal)
-        {
-            Int32 count = 0;
-
-            Boolean seqDiscrete;
-            Boolean seqObsolete;
-            Boolean valGeneric;
-            Boolean valVarious;
-            //      Boolean valPresent;
-
-            Boolean displaySeq;
-
-            foreach (KeyValuePair<String, PCLComplexSeq> kvp in _seqs)
-            {
-                displaySeq = true;
-
-                seqObsolete = kvp.Value.FlagObsolete;
-                seqDiscrete = kvp.Value.FlagDiscrete;
-
-                if ((seqObsolete) && (!incObsoleteSeqs))
-                    displaySeq = false;
-
-                if (seqDiscrete)
-                {
-                    valGeneric = kvp.Value.FlagValGeneric;
-                    valVarious = kvp.Value.FlagValVarious;
-
-                    if ((incDiscreteVal) && (valGeneric))
-                        displaySeq = false;
-                    else if ((!incDiscreteVal) &&
-                             (!valGeneric) &&
-                             (!valVarious))
-                        displaySeq = false;
-                }
-
-                if (displaySeq)
-                {
-                    count++;
-                    grid.Items.Add(kvp.Value);
-                }
-            }
-
-            return count;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // d i s p l a y S t a t s C o u n t s                                //
         //--------------------------------------------------------------------//
         //                                                                    //

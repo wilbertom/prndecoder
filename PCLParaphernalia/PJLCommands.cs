@@ -141,29 +141,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // d i s p l a y C m d s                                              //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Display list of commands.                                          //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displayCmds(DataGrid grid)
-        {
-            Int32 count = 0;
-
-            foreach (KeyValuePair<String, PJLCommand> kvp
-                in _cmds)
-            {
-                count++;
-                grid.Items.Add(kvp.Value);
-            }
-
-            return count;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // d i s p l a y S t a t s C o u n t s                                //
         //--------------------------------------------------------------------//
         //                                                                    //

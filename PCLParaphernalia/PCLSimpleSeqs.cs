@@ -87,37 +87,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // d i s p l a y S e q L i s t                                        //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Display list of sequences in nominated data grid.                  //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displaySeqList(DataGrid grid,
-                                           Boolean incObsSeqs)
-        {
-            Int32 count = 0;
-
-            Boolean seqObsolete;
-
-            foreach (KeyValuePair<Byte, PCLSimpleSeq> kvp in _seqs)
-            {
-                seqObsolete = kvp.Value.FlagObsolete;
-
-                if ((incObsSeqs == true) ||
-                    ((incObsSeqs == false) && (!seqObsolete)))
-                {
-                    count++;
-                    grid.Items.Add(kvp.Value);
-                }
-            }
-
-            return count;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // d i s p l a y S t a t s C o u n t s                                //
         //--------------------------------------------------------------------//
         //                                                                    //

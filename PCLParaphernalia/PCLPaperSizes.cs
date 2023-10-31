@@ -166,28 +166,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // d i s p l a y P a p e r S i z e L i s t                            //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Display list of paper sizes in nominated data grid.                //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displayPaperSizeList(DataGrid grid)
-        {
-            Int32 count = 0;
-
-            foreach (PCLPaperSize v in _paperSizes)
-            {
-                count++;
-                grid.Items.Add(v);
-            }
-
-            return count;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // g e t C o u n t                                                    //
         //--------------------------------------------------------------------//
         //                                                                    //

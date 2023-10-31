@@ -9,7 +9,7 @@ namespace PCLParaphernalia
     /// 
     /// Class provides details of PCL XL Attribute Enumeration values.
     /// 
-    /// © Chris Hutchinson 2010
+    /// ï¿½ Chris Hutchinson 2010
     /// 
     /// </summary>
 
@@ -355,34 +355,12 @@ namespace PCLParaphernalia
             row = table.NewRow();
 
             row[0] = "";
-            row[1] = "¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯";
+            row[1] = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
             row[2] = "";
             row[3] = "";
             row[4] = "";
 
             table.Rows.Add(row);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // d i s p l a y T a g s                                              //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Display list of Attribute Enumerations.                            //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displayTags(DataGrid grid)
-        {
-            Int32 count = 0;
-
-            foreach (KeyValuePair<String, PCLXLAttrEnum> kvp in _tags)
-            {
-                count++;
-                grid.Items.Add(kvp.Value);
-            }
-
-            return count;
         }
 
         //--------------------------------------------------------------------//

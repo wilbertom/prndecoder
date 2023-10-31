@@ -206,28 +206,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // d i s p l a y T a g s                                              //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Display list of Whitespace tags.                                   //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static Int32 displayTags(DataGrid grid)
-        {
-            Int32 count = 0;
-
-            foreach (KeyValuePair<Byte, PCLXLWhitespace> kvp in _tags)
-            {
-                count++;
-                grid.Items.Add(kvp.Value);
-            }
-
-            return count;
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // i n c r e m e n t S t a t s C o u n t                              //
         //--------------------------------------------------------------------//
         //                                                                    //
