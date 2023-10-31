@@ -18,10 +18,6 @@
                 <Menu HorizontalAlignment="Left"
                       VerticalAlignment="Top"
                       VerticalContentAlignment="Center">
-                    
-                    <MenuItem Header="_File" TabIndex="0">
-                        <MenuItem Click="fileExit_Click" Header="_Exit" />
-                    </MenuItem>
 
                     <MenuItem Header="_Tool" TabIndex="2">
                         <MenuItem x:Name="menuItemToolPrnAnalyse"
