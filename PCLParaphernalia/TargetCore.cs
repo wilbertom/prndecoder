@@ -123,7 +123,6 @@ namespace PCLParaphernalia
                                                     ref _saveFilename);
 
             else
-                //     Tool MakeOverlay // ***** Do DUMMY procs ? ***** //
                 //     Tool PrintLang
                 //     Tool PrnAnalyse
                 //     Tool SymbolSetGen
@@ -154,9 +153,7 @@ namespace PCLParaphernalia
 
             //----------------------------------------------------------------//
 
-            if (crntToolId == ToolCommonData.eToolIds.MakeOverlay)
-                ToolMakeOverlayPersist.loadDataRpt(ref tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
+            if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.loadDataRpt(ref tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.SymbolSetGenerate)
                 ToolSymbolSetGenPersist.loadDataRpt(ref tmpFmt);
@@ -287,7 +284,6 @@ namespace PCLParaphernalia
                                                     saveFilename);
 
             //  else
-            //     Tool MakeOverlay // ***** Do DUMMY procs ? ***** //
             //     Tool PrintLang
             //     Tool PrnAnalyse
             //     Tool SymbolSetGen
@@ -312,9 +308,7 @@ namespace PCLParaphernalia
             Int32 tmpFmt = (Int32)rptFileFmt;
             Int32 tmpChkMarks = (Int32)rptChkMarks;
 
-            if (crntToolId == ToolCommonData.eToolIds.MakeOverlay)
-                ToolMakeOverlayPersist.saveDataRpt(tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
+            if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.saveDataRpt(tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.SymbolSetGenerate)
                 ToolSymbolSetGenPersist.saveDataRpt(tmpFmt);

@@ -31,7 +31,6 @@ namespace PCLParaphernalia
         //                                                                    //
         //--------------------------------------------------------------------//
 
-        private ToolMakeOverlay _subFormToolMakeOverlay = null;
         //    private ToolPatternGenerate     _subFormToolPatternGenerate     = null;
         private ToolPrnAnalyse _subFormToolPrnAnalyse = null;
         private ToolPrnPrint _subFormToolPrnPrint = null;
@@ -265,14 +264,8 @@ namespace PCLParaphernalia
                     startToolId = (ToolCommonData.eToolIds)crntToolIndex;
                 else
                     startToolId = ToolCommonData.eToolIds.PrintLang;
-
+                
                 if (startToolId ==
-                    ToolCommonData.eToolIds.MakeOverlay)
-                    toolMakeOverlay_Selected(this, null);
-                //      else if (startToolId ==
-                //          ToolCommonData.eToolIds.PatternGenerate)
-                //          toolPatternGenerate_Selected(this, null);
-                else if (startToolId ==
                     ToolCommonData.eToolIds.PrnAnalyse)
                     toolPrnAnalyse_Selected(this, null);
                 else if (startToolId ==
@@ -301,12 +294,6 @@ namespace PCLParaphernalia
         private void crntToolResetPDL()
         {
             if (_crntToolId ==
-                ToolCommonData.eToolIds.MakeOverlay)
-                _subFormToolMakeOverlay.giveCrntPDL(ref _crntPDL);
-            //     else if (_crntToolId ==
-            //         ToolCommonData.eToolIds.PatternGenerate)
-            //         _subFormToolPatternGenerate.giveCrntPDL(ref _crntPDL);
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.giveCrntPDL(ref _crntPDL);
             else if (_crntToolId ==
@@ -354,12 +341,6 @@ namespace PCLParaphernalia
         private void crntToolResetTarget()
         {
             if (_crntToolId ==
-                ToolCommonData.eToolIds.MakeOverlay)
-                _subFormToolMakeOverlay.resetTarget();
-            //      else if (_crntToolId ==
-            //          ToolCommonData.eToolIds.PatternGenerate)
-            //          _subFormToolPatternGenerate.resetTarget();
-            else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.resetTarget();
             else if (_crntToolId ==
@@ -389,13 +370,6 @@ namespace PCLParaphernalia
         {
             if (_crntToolId != ToolCommonData.eToolIds.Min)
                 ToolCommonPersist.saveData((Int32)_crntToolId);
-
-            else if (_crntToolId ==
-                ToolCommonData.eToolIds.MakeOverlay)
-                _subFormToolMakeOverlay.metricsSave();
-            //     else if (_crntToolId ==
-            //         ToolCommonData.eToolIds.PatternGenerate)
-            //         _subFormToolPatternGenerate.metricsSave();
             else if (_crntToolId ==
                 ToolCommonData.eToolIds.PrnAnalyse)
                 _subFormToolPrnAnalyse.metricsSave();
@@ -424,7 +398,6 @@ namespace PCLParaphernalia
 
         private void crntToolUncheckAll()
         {
-            menuItemToolMakeOverlay.IsChecked = false;
             //  menuItemToolPatternGenerate.IsChecked = false;
             menuItemToolPrnAnalyse.IsChecked = false;
             menuItemToolPrnPrint.IsChecked = false;
@@ -699,38 +672,6 @@ namespace PCLParaphernalia
 
                 crntToolResetTarget();
             }
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t o o l M a k e O v e r l a y _ S e l e c t e d                    //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Make Overlay' item is selected.                   //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void toolMakeOverlay_Selected(object sender,
-                                              RoutedEventArgs e)
-        {
-            crntToolSaveMetrics();
-            crntToolUncheckAll();
-
-            menuItemToolMakeOverlay.IsChecked = true;
-
-            _crntToolId = ToolCommonData.eToolIds.MakeOverlay;
-
-            _subFormToolMakeOverlay = new ToolMakeOverlay(ref _crntPDL);
-
-            TargetCore.metricsLoadFileCapt(_crntToolId, _crntSubId, _crntPDL);
-
-            object content = _subFormToolMakeOverlay.Content;
-
-            _subFormToolMakeOverlay.Content = null;
-            _subFormToolMakeOverlay.Close();
-
-            grid1.Children.Clear();
-            grid1.Children.Add(content as UIElement);
         }
 
         /*

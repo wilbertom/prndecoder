@@ -293,7 +293,6 @@
     <Compile Include="ToolCommonData.cs" />
     <Compile Include="ToolCommonFunctions.cs" />
     <Compile Include="ToolCommonPersist.cs" />
-    <Compile Include="ToolMakeOverlayReport.cs" />
     <Compile Include="ToolPatternGenerate.xaml.cs">
       <DependentUpon>ToolPatternGenerate.xaml</DependentUpon>
     </Compile>
@@ -303,10 +302,6 @@
     </Compile>
     <Compile Include="PrnParseOptions.cs" />
     <Compile Include="ToolPrnAnalysePersist.cs" />
-    <Compile Include="ToolMakeOverlay.xaml.cs">
-      <DependentUpon>ToolMakeOverlay.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ToolMakeOverlayPersist.cs" />
     <Compile Include="ToolPrnPrint.xaml.cs">
       <DependentUpon>ToolPrnPrint.xaml</DependentUpon>
     </Compile>
@@ -351,10 +346,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ToolPrnAnalyse.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ToolMakeOverlay.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

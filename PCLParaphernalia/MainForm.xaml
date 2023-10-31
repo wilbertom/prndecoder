@@ -78,11 +78,6 @@
                     </MenuItem>
 
                     <MenuItem Header="_Tool" TabIndex="2">
-                        <MenuItem x:Name="menuItemToolMakeOverlay"
-                                  Click="toolMakeOverlay_Selected"
-                                  Header="Make Overlay"
-                                  IsCheckable="True"
-                                  TabIndex="3" />
                   <!--  <MenuItem x:Name="menuItemToolPatternGenerate"
                                   Click="toolPatternGenerate_Selected"
                                   Header="Pattern Generate"
