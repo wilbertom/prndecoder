@@ -118,11 +118,6 @@
                                   Header="PRN File Print"
                                   IsCheckable="True"
                                   TabIndex="9" />
-                        <MenuItem x:Name="menuItemToolSoftFontGenerate"
-                                  Click="toolSoftFontGenerate_Selected"
-                                  Header="Soft Font Generate"
-                                  IsCheckable="True"
-                                  TabIndex="10" />
                         <MenuItem x:Name="menuItemToolStatusReadback"
                                   Click="toolStatusReadback_Selected"
                                   Header="Status Readback"

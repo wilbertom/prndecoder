@@ -333,9 +333,6 @@
       <DependentUpon>ToolPatternGenerate.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolPrnAnalyseReport.cs" />
-    <Compile Include="ToolSoftFontGenerate.xaml.cs">
-      <DependentUpon>ToolSoftFontGenerate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ToolPrnAnalyse.xaml.cs">
       <DependentUpon>ToolPrnAnalyse.xaml</DependentUpon>
     </Compile>
@@ -349,14 +346,6 @@
       <DependentUpon>ToolPrnPrint.xaml</DependentUpon>
     </Compile>
     <Compile Include="ToolPrnPrintPersist.cs" />
-    <Compile Include="ToolSoftFontGenLog.cs" />
-    <Compile Include="ToolSoftFontGenPCL.cs" />
-    <Compile Include="ToolSoftFontGenPCLXL.cs" />
-    <Compile Include="ToolSoftFontGenPCLCommon.cs" />
-    <Compile Include="ToolSoftFontGenPersist.cs" />
-    <Compile Include="ToolSoftFontGenReport.cs" />
-    <Compile Include="ToolSoftFontGenTTF.cs" />
-    <Compile Include="ToolSoftFontGenTTFTable.cs" />
     <Compile Include="ToolStatusReadbackPJLFS.cs" />
     <Compile Include="ToolStatusReadbackReport.cs" />
     <Compile Include="ToolSymbolSetGenerate.xaml.cs">
@@ -403,10 +392,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ToolPatternGenerate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ToolSoftFontGenerate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

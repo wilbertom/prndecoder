@@ -149,7 +149,6 @@ namespace PCLParaphernalia
                 //     Tool MakeOverlay // ***** Do DUMMY procs ? ***** //
                 //     Tool PrintLang
                 //     Tool PrnAnalyse
-                //     Tool SoftFontGen
                 //     Tool SymbolSetGen
                 //     Tool XXXDiags
 
@@ -182,9 +181,6 @@ namespace PCLParaphernalia
                 ToolMakeOverlayPersist.loadDataRpt(ref tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.loadDataRpt(ref tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.SoftFontGenerate)
-                ToolSoftFontGenPersist.loadDataRpt(ref tmpFmt,
-                                                    ref tmpChkMarks);
             else if (crntToolId == ToolCommonData.eToolIds.StatusReadback)
                 ToolStatusReadbackPersist.loadDataRpt(ref tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.SymbolSetGenerate)
@@ -341,7 +337,6 @@ namespace PCLParaphernalia
             //     Tool MakeOverlay // ***** Do DUMMY procs ? ***** //
             //     Tool PrintLang
             //     Tool PrnAnalyse
-            //     Tool SoftFontGen
             //     Tool SymbolSetGen
             //     Tool XXXDiags
         }
@@ -368,8 +363,6 @@ namespace PCLParaphernalia
                 ToolMakeOverlayPersist.saveDataRpt(tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.PrnAnalyse)
                 ToolPrnAnalysePersist.saveDataRpt(tmpFmt);
-            else if (crntToolId == ToolCommonData.eToolIds.SoftFontGenerate)
-                ToolSoftFontGenPersist.saveDataRpt(tmpFmt, tmpChkMarks);
             else if (crntToolId == ToolCommonData.eToolIds.StatusReadback)
                 ToolStatusReadbackPersist.saveDataRpt(tmpFmt);
             else if (crntToolId == ToolCommonData.eToolIds.SymbolSetGenerate)
