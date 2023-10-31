@@ -36,18 +36,6 @@
                                       Header="Configure ..."
                                       TabIndex="1" />
                         </MenuItem>
-
-                        <Separator />
-
-                        <MenuItem x:Name="menuItemTargetRptFile"
-                                  Header="Report File"
-                                  TabIndex="0">
-                            <MenuItem x:Name="menuItemTargetRptFileConfigure"
-                                      Click="targetRptFileConfigure_Click"
-                                      Header="Configure ..."
-                                      TabIndex="0" />
-                        </MenuItem>
-
                     </MenuItem>
 
                     <MenuItem Header="_Tool" TabIndex="2">

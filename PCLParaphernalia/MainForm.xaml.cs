@@ -465,30 +465,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // t a r g e t R p t F i l e C o n f i g u r e _ C l i c k            //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Target | Report File | Configure' item is         //
-        // selected.                                                          //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void targetRptFileConfigure_Click(object sender,
-                                                   RoutedEventArgs e)
-        {
-            crntToolResetPDL();
-
-            crntToolResetSubId();
-
-            TargetRptFile targetRptFile = new TargetRptFile(_crntToolId,
-                                                             _crntSubId,
-                                                             _crntPDL);
-
-            Nullable<Boolean> dialogResult = targetRptFile.ShowDialog();
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // t o o l P r n A n a l y s e _ S e l e c t e d                      //
         //--------------------------------------------------------------------//
         //                                                                    //

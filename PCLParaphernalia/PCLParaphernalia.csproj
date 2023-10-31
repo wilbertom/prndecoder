@@ -280,9 +280,6 @@
     <Compile Include="TargetFile.xaml.cs">
       <DependentUpon>TargetFile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TargetRptFile.xaml.cs">
-      <DependentUpon>TargetRptFile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ToolCommonData.cs" />
     <Compile Include="ToolCommonFunctions.cs" />
     <Compile Include="ToolCommonPersist.cs" />
@@ -302,10 +299,6 @@
     </Compile>
     <Compile Include="Helper_WPFFocusFix.cs" />
     <Page Include="TargetFile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TargetRptFile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
