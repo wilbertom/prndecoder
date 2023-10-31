@@ -280,9 +280,6 @@
     <Compile Include="TargetFile.xaml.cs">
       <DependentUpon>TargetFile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TargetNetPrintConfig.xaml.cs">
-      <DependentUpon>TargetNetPrintConfig.xaml</DependentUpon>
-    </Compile>
     <Compile Include="TargetRptFile.xaml.cs">
       <DependentUpon>TargetRptFile.xaml</DependentUpon>
     </Compile>
@@ -309,10 +306,6 @@
     </Compile>
     <Compile Include="Helper_WPFFocusFix.cs" />
     <Page Include="TargetFile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TargetNetPrintConfig.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -377,7 +370,6 @@
     <Compile Include="PJLCommands.cs" />
     <Compile Include="PJLVariable.cs" />
     <Compile Include="PJLVariables.cs" />
-    <Compile Include="TargetNetPrint.cs" />
     <Compile Include="PCLXLWriter.cs" />
     <Compile Include="MainFormPersist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">

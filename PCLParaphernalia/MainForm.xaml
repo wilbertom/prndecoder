@@ -37,20 +37,6 @@
                                       TabIndex="1" />
                         </MenuItem>
                         
-                        <MenuItem x:Name="menuItemTargetNetPrinter"
-                                  Header="Network Printer"
-                                  TabIndex="1">
-                            <MenuItem x:Name="menuItemTargetNetPrinterSelect"
-                                      Click="targetNetPrinterSelect_Click"
-                                      Header="Select"
-                                      TabIndex="0" />
-                            <MenuItem x:Name="menuItemTargetNetPrinterConfigure"
-                                      Click="targetNetPrinterConfigure_Click"
-                                      Header="Configure ..."
-                                      IsCheckable="True"
-                                      TabIndex="1" />
-                        </MenuItem>
-                        
                         <MenuItem x:Name="menuItemTargetWinPrinter"
                                   Header="Windows Printer"
                                   TabIndex="2">

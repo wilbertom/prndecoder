@@ -284,35 +284,6 @@ namespace PCLParaphernalia
 
         //--------------------------------------------------------------------//
         //                                                        M e t h o d //
-        // m e t r i c s S a v e N e t P r i n t e r                          //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Store current target network printer metrics data.                 //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        public static void metricsSaveNetPrinter(
-            String netPrinterAddress,
-            Int32 netPrinterPort,
-            Int32 netPrinterTimeoutSend,
-            Int32 netPrinterTimeoutReceive)
-        {
-            _targetType = eTarget.NetPrinter;
-
-            _netPrinterAddress = netPrinterAddress;
-            _netPrinterPort = netPrinterPort;
-            _netPrinterTimeoutSend = netPrinterTimeoutSend;
-            _netPrinterTimeoutReceive = netPrinterTimeoutReceive;
-
-            TargetPersist.saveDataNetPrinter((Int32)_targetType,
-                                              _netPrinterAddress,
-                                              _netPrinterPort,
-                                              _netPrinterTimeoutSend,
-                                              _netPrinterTimeoutReceive);
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
         // m e t r i c s S a v e W i n P r i n t e r                          //
         //--------------------------------------------------------------------//
         //                                                                    //
@@ -466,56 +437,7 @@ namespace PCLParaphernalia
 
         public static void requestStreamWrite(Boolean keepNetConnect)
         {
-            if ((_targetType == eTarget.NetPrinter) &&
-                (_binWriter != null))
-            {
-                //------------------------------------------------------------//
-                //                                                            //
-                // Output to network printer port.                            //
-                //                                                            //
-                //------------------------------------------------------------//
-
-                Boolean OK;
-
-                IPAddress ipAddress = new IPAddress(0x00);
-
-                OK = TargetNetPrint.checkIPAddress(_netPrinterAddress,
-                                                   ref ipAddress);
-
-                if (!OK)
-                {
-                    MessageBox.Show("invalid address" + _netPrinterAddress,
-                                    "Printer IP Address",
-                                    MessageBoxButton.OK,
-                                    MessageBoxImage.Exclamation);
-                }
-                else
-                {
-                    //----------------------------------------------------//
-                    //                                                    //
-                    // Ensure that the address is stored in the standard  //
-                    // notation (dotted-quad for IPv4; colon-hexadecimal  //
-                    // for IPv6).                                         //
-                    //                                                    //
-                    // Then send the generated print stream to the target //
-                    // printer port.                                      //
-                    //                                                    //
-                    //----------------------------------------------------//
-
-                    BinaryReader binReader =
-                        new BinaryReader(_binWriter.BaseStream);
-
-                    TargetNetPrint.sendData(binReader,
-                                            _netPrinterAddress,
-                                            _netPrinterPort,
-                                            _netPrinterTimeoutSend,
-                                            _netPrinterTimeoutReceive,
-                                            keepNetConnect);
-
-                    binReader.Close();
-                }
-            }
-            else if ((_targetType == eTarget.WinPrinter) &&
+            if ((_targetType == eTarget.WinPrinter) &&
                      (_binWriter != null))
             {
                 //------------------------------------------------------------//
@@ -566,11 +488,7 @@ namespace PCLParaphernalia
 
         public static void responseCloseConnection()
         {
-            if ((_targetType == eTarget.NetPrinter) &&
-                (_binWriter != null))
-            {
-                TargetNetPrint.closeResponseConnection();
-            }
+
         }
 
         //--------------------------------------------------------------------//
@@ -588,21 +506,6 @@ namespace PCLParaphernalia
                                                  ref Int32 blockLen)
         {
             Boolean OK = true;
-
-            //----------------------------------------------------------------//
-            //                                                                //
-            // Read response block from target.                               //
-            //                                                                //
-            //----------------------------------------------------------------//
-
-            if ((_targetType == eTarget.NetPrinter) &&
-                (_binWriter != null))
-            {
-                OK = TargetNetPrint.readResponseBlock(offset,
-                                                       bufRem,
-                                                       ref replyData,
-                                                       ref blockLen);
-            }
 
             return OK;
         }
