@@ -23,21 +23,6 @@
                         <MenuItem Click="fileExit_Click" Header="_Exit" />
                     </MenuItem>
 
-                    <MenuItem Header="T_arget" TabIndex="1">
-                        <MenuItem x:Name="menuItemTargetFile"
-                                  Header="File"
-                                  TabIndex="0">
-                            <MenuItem x:Name="menuItemTargetFileSelect"
-                                      Click="targetFileSelect_Click"
-                                      Header="Select"
-                                      TabIndex="0" />
-                            <MenuItem x:Name="menuItemTargetFileConfigure"
-                                      Click="targetFileConfigure_Click"
-                                      Header="Configure ..."
-                                      TabIndex="1" />
-                        </MenuItem>
-                    </MenuItem>
-
                     <MenuItem Header="_Tool" TabIndex="2">
                         <MenuItem x:Name="menuItemToolPrnAnalyse"
                                   Click="toolPrnAnalyse_Selected"

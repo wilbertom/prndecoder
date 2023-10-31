@@ -277,9 +277,6 @@
     <Compile Include="Helper_RawPrinter.cs" />
     <Compile Include="Helper_RegKey.cs" />
     <Compile Include="ReportCore.cs" />
-    <Compile Include="TargetFile.xaml.cs">
-      <DependentUpon>TargetFile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ToolCommonData.cs" />
     <Compile Include="ToolCommonFunctions.cs" />
     <Compile Include="ToolCommonPersist.cs" />
@@ -298,10 +295,6 @@
       <DependentUpon>WorkFolder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Helper_WPFFocusFix.cs" />
-    <Page Include="TargetFile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="ToolPrnAnalyse.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

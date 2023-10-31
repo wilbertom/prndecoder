@@ -180,11 +180,6 @@ namespace PCLParaphernalia
 
             TargetCore.initialiseSettings();
 
-            if (TargetCore.getType() == TargetCore.eTarget.File)
-            {
-                menuItemTargetFile.IsChecked = true;
-            }
-
             //----------------------------------------------------------------//
             //                                                                //
             // Load tool.                                                     //
@@ -411,55 +406,6 @@ namespace PCLParaphernalia
                                 "Help file selection",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Error);
-            }
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t a r g e t F i l e S e l e c t _ C l i c k                        //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Target | File | Select' item is selected.         //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void targetFileSelect_Click(object sender, RoutedEventArgs e)
-        {
-            menuItemTargetFile.IsChecked = true;
-
-            TargetCore.metricsSaveType(TargetCore.eTarget.File);
-
-            crntToolResetTarget();
-        }
-
-        //--------------------------------------------------------------------//
-        //                                                        M e t h o d //
-        // t a r g e t F i l e C o n f i g u r e _ C l i c k                  //
-        //--------------------------------------------------------------------//
-        //                                                                    //
-        // Called when the 'Target | File | Configure' item is selected.      //
-        //                                                                    //
-        //--------------------------------------------------------------------//
-
-        private void targetFileConfigure_Click(object sender,
-                                               RoutedEventArgs e)
-        {
-            crntToolResetPDL();
-
-            crntToolResetSubId();
-
-            TargetFile targetFile = new TargetFile(_crntToolId, _crntSubId,
-                                                    _crntPDL);
-
-            Nullable<Boolean> dialogResult = targetFile.ShowDialog();
-
-            if (dialogResult == true)
-            {
-                menuItemTargetFile.IsChecked = true;
-
-                TargetCore.metricsSaveType(TargetCore.eTarget.File);
-
-                crntToolResetTarget();
             }
         }
 
